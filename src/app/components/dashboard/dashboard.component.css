@@ -1,0 +1,24 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  
+    .spacer {
+      flex: 1;
+    }
+  
+    .content {
+      padding: 16px;
+  
+      .controls, .temperature, .appliances {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+  
+      .temperature {
+        flex-wrap: wrap;
+      }
+    }
+  }
+  

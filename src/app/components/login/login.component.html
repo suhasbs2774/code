@@ -1,0 +1,34 @@
+<div class="login-page-container">
+    <div class="login-left">
+      <h1 class="title">waves wash</h1>
+      <h3 class="highlight">POWERED BY CREATORS AROUND THE WORLD.</h3>
+      <p class="create-account">
+        Don't have an account? <a href="#" class="link">Create account →</a>
+      </p>
+    </div>
+  
+    <div class="login-right">
+      <mat-card class="login-card">
+        <h2 class="login-title">Login to your account</h2>
+        <form>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Enter your username" />
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Enter your password" />
+          </mat-form-field>
+  
+          <mat-checkbox class="remember-me">Remember me</mat-checkbox>
+  
+          <button mat-raised-button color="primary" class="login-button" (click)="gotoHome()">Login</button>
+        </form>
+  
+        <div class="forgot-password">
+          <a href="#" class="link">Forgot your password?</a>
+        </div>
+      </mat-card>
+    </div>
+  </div>

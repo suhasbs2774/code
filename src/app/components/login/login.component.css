@@ -1,0 +1,102 @@
+/* General styles */
+.header-component {
+    .spacer {
+      flex: 1 1 auto;
+    }
+    .search-bar {
+      width: 300px;
+      margin: 0 16px;
+    }
+    
+    }
+    
+    /* Left section styling */
+    .main-content-component{
+      .content {
+        display: flex;
+        justify-content: space-between;
+        padding: 32px;
+      }
+      .left-section {
+        width: 50%;
+      }
+      .right-section {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .highlight {
+        color: #4caf50;
+      }
+      
+    }
+    
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #81215e;
+    }
+    
+    .highlight {
+      color: #4caf50;
+      margin-top: 1rem;
+    }
+    
+    .create-account {
+      margin-top: 2rem;
+    }
+    
+    .link {
+      color: #aece3a;
+      text-decoration: none;
+    }
+    
+    /* Right section styling */
+    .login-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #57595f;
+      background-image: url('../../../assets/images/waveswash.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .login-card {
+      width: 350px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(3, 20, 18, 0.399);
+    }
+    
+    .login-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .form-field {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .remember-me {
+      margin-bottom: 20px;
+    }
+    
+    .login-button {
+      width: 100%;
+      background-color: #3d363d;
+      color: #020312;
+    }
+    
+    .login-button:hover {
+      background-color: #060101;
+    }
+    
+    .forgot-password {
+      text-align: right;
+      margin-top: 10px;
+    }
