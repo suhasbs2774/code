@@ -27,7 +27,8 @@
         align-items: center;
       }
       .highlight {
-        color: #4caf50;
+        color: #087bc7;
+        background-image: url('../../../assets/images/proimg3.jpg');
       }
       
     }
@@ -35,11 +36,11 @@
     .title {
       font-size: 2rem;
       font-weight: bold;
-      color: #81215e;
+      color: #000000;
     }
     
     .highlight {
-      color: #4caf50;
+      color: #0a9b9d;
       margin-top: 1rem;
     }
     
@@ -48,7 +49,7 @@
     }
     
     .link {
-      color: #aece3a;
+      color: #0c1ec3;
       text-decoration: none;
     }
     
@@ -58,8 +59,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #57595f;
-      background-image: url('../../../assets/images/waveswash.jpg');
+      background-color: #183386;
+      background-image: url('../../../assets/images/proimg4.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -68,7 +69,11 @@
       width: 350px;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(3, 20, 18, 0.399);
+      box-shadow: 0 4px 10px rgba(43, 165, 151, 0.399);
+      background-color: #183386;
+      background-image: url('../../../assets/images/waveswash.jpg');
+      background-size: cover;
+      background-position: center;
     }
     
     .login-title {
