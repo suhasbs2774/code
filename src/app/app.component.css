@@ -1,0 +1,17 @@
+.header {
+    width: 100px;
+    height: 90px;
+}
+
+.footer {
+    width: 120px;
+    height: 50px;
+   
+}
+footer{
+    display: flex !important;
+    align-items: center !important;
+}
+.footerText {
+    margin-right: 5px;
+}
