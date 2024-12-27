@@ -1,34 +1,27 @@
-<div class="login-page-container">
-    <div class="login-left">
-      <h1 class="title">WAVES WASH</h1>
-      <h3 class="highlight">"THE ULTIMATE WAVE OF CLEANLINESS."</h3>
-      <p class="create-account">
-        Don't have an account? <a href="#" class="link">Create account →</a>
-      </p>
-    </div>
-  
-    <div class="login-right">
-      <mat-card class="login-card">
-        <h2 class="login-title">Login to your account</h2>
-        <form>
-          <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Username</mat-label>
-            <input matInput placeholder="Enter your username" />
-          </mat-form-field>
-  
-          <mat-form-field appearance="outline" class="form-field">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="Enter your password" />
-          </mat-form-field>
-  
-          <mat-checkbox class="remember-me">Remember me</mat-checkbox>
-  
-          <button mat-raised-button color="primary" class="login-button" (click)="gotoHome()">Login</button>
-        </form>
-  
-        <div class="forgot-password">
-          <a href="#" class="link">Forgot your password?</a>
-        </div>
-      </mat-card>
-    </div>
+<div class="login-container">
+  <!-- Left Section -->
+  <div class="image-section">
+    <img src="../../../assets/images/service1.jpg" alt="Nike Shoe" class="shoe-image" />
   </div>
+
+  <!-- Right Section -->
+  <div class="form-section">
+    <img src="../../../assets/images/waveWashlogo.jpg" alt="Nike Logo" class="logo" />
+    <form class="login-box">
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="vendor" />
+          I am Vendor
+        </label>
+        <label>
+          <input type="radio" name="user" />
+          I am User
+        </label>
+      </div>
+      <a href="#" class="forgot-password">Forgot Password?</a>
+      <button type="submit" class="btn">LOGIN</button>
+    </form>
+  </div>
+</div>

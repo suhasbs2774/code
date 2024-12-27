@@ -1,107 +1,258 @@
-/* General styles */
-.header-component {
-    .spacer {
-      flex: 1 1 auto;
-    }
-    .search-bar {
-      width: 300px;
-      margin: 0 16px;
-    }
-    
-    }
-    
-    /* Left section styling */
-    .main-content-component{
-      .content {
-        display: flex;
-        justify-content: space-between;
-        padding: 32px;
-      }
-      .left-section {
-        width: 50%;
-      }
-      .right-section {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .highlight {
-        color: #087bc7;
-        background-image: url('../../../assets/images/proimg3.jpg');
-      }
-      
-    }
-    
-    .title {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #000000;
-    }
-    
-    .highlight {
-      color: #0a9b9d;
-      margin-top: 1rem;
-    }
-    
-    .create-account {
-      margin-top: 2rem;
-    }
-    
-    .link {
-      color: #0c1ec3;
-      text-decoration: none;
-    }
-    
-    /* Right section styling */
-    .login-right {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #183386;
-      background-image: url('../../../assets/images/proimg4.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-    
-    .login-card {
-      width: 350px;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(43, 165, 151, 0.399);
-      background-color: #183386;
-      background-image: url('../../../assets/images/waveswash.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-    
-    .login-title {
-      text-align: center;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    
-    .form-field {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-    
-    .remember-me {
-      margin-bottom: 20px;
-    }
-    
-    .login-button {
-      width: 100%;
-      background-color: #3d363d;
-      color: #020312;
-    }
-    
-    .login-button:hover {
-      background-color: #060101;
-    }
-    
-    .forgot-password {
-      text-align: right;
-      margin-top: 10px;
-    }
+.login-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  height: 80vh;
+}
+
+.image-section {
+  flex: 1;
+  background-image:url("../../../assets/images/bg.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-right: -10px;
+  z-index: 2;
+}
+
+.shoe-image {
+  width: 600px;
+  height: 400px;
+
+}
+
+.form-section {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.forgot-password {
+  color: #0044cc;
+  text-align: right;
+  margin: 5px 0 15px;
+}
+
+.btn {
+  background-image:url("../../../assets/images/bg.png");
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  border: 1px solid #ccc; /* Adds the border */
+  padding: 5px; /* Adds space inside the border */
+  border-radius: 5px; /* Rounds the corners of the border */
+  width: 100%; /* Ensures the border spans the full width of the group */
+  cursor: pointer; /* Adds a pointer cursor for better UX */
+
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+
+.form-section {
+  position: relative;
+  overflow: hidden; 
+}
+
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 150, 255, 0.3);
+  animation: float 6s infinite ease-in-out;
+  z-index: 0;
+}
+
+
+.bubble:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  top: 15%;
+  right: 5%;
+}
+.bubble:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  right: 8%;
+}
+.bubble:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  top: 30%;
+  right: 15%;
+}
+.bubble:nth-child(4) {
+  width: 70px;
+  height: 70px;
+  top: 70%;
+  right: 20%;
+}
+.bubble:nth-child(5) {
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  right: 25%;
+}
+.bubble:nth-child(6) {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 5%;
+}
+.bubble:nth-child(7) {
+  width: 40px;
+  height: 40px;
+  top: 70%;
+  right: 10%;
+}
+.bubble:nth-child(8) {
+  width: 90px;
+  height: 90px;
+  top: 5%;
+  right: 15%;
+}
+.bubble:nth-child(9) {
+  width: 50px;
+  height: 50px;
+  top: 40%;
+  right: 20%;
+}
+.bubble:nth-child(10) {
+  width: 60px;
+  height: 60px;
+  top: 25%;
+  right: 5%;
+}
+
+
+@keyframes float {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-30px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.form-section {
+  position: relative;
+  overflow: hidden; 
+}
+
+
+.bubble-left {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 150, 255, 0.3);/* Semi-transparent blue */
+  animation: float-left 6s infinite ease-in-out;
+  z-index: 0; /* Ensure bubbles are behind the content */
+}
+
+.bubble-left:nth-child(1) {
+  width: 60px;
+  height: 60px;
+  top: 2%;
+  left: 5%;
+}
+
+.bubble-left:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  top: 15%;
+  left: 27%;
+}
+
+.bubble-left:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  top: 25%;
+  left: 6%;
+}
+
+.bubble-left:nth-child(4) {
+  width: 85px;
+  height: 85px;
+  top: 35%;
+  left: 18%;
+}
+
+.bubble-left:nth-child(5) {
+  width: 75px;
+  height: 75px;
+  top: 45%;
+  left: 5%;
+}
+
+.bubble-left:nth-child(6) {
+  width: 55px;
+  height: 65px;
+  top: 85%;
+  left: 20%;
+}
+
+
+@keyframes float-left {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(30px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
