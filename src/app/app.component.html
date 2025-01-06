@@ -1,9 +1,9 @@
-<header>
-    <img class="header" title="header" src="../assets/images/waveWashlogo.jpg">
- </header>
- <main>
-    <router-outlet></router-outlet>
- </main>
- <footer>
-    <span class="footerText"> Devoloped by :</span> <img class="footer" title="footer" src="../assets/images/winrLogo.jpg">
- </footer>
+<header *ngIf="displayHeaderFooter">
+   <img class="header" title="header" src="../assets/images/waveWashlogo.jpg">
+</header>
+<main>
+   <router-outlet></router-outlet>
+</main>
+<footer *ngIf="displayHeaderFooter">
+   <span class="footerText"> Devoloped by :</span> <img class="footer" title="footer" src="../assets/images/winrLogo.jpg">
+</footer>

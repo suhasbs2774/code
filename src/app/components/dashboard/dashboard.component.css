@@ -1,28 +1,222 @@
-mat-toolbar {
-  background-color: #3f51b5;
-  color: rgb(248, 255, 255);
+/* General styling for main boxes (Search for Wash, Post Job, History) */
+.main-box {
+  /*background-color: #f5f5f5; */
+  background: url('../../../assets/images/backgroundLogin.jpeg') ;
+  color: #333333; /* Text color */
+  padding: 45px;
+  width: 75%; /* Reduce width */
+  margin: 0 auto; /* Center the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  margin-bottom: 25px;
+  margin-top: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 30px;
 }
 
-mat-card {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  background-color: #ffffff;
-  transition: transform 0.2s;
+.postjob-heading{
+  font-size: 20px;
+  color: white; /* Dark blue text */
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
-mat-card:hover {
-  transform: scale(1.02);
+/* User Dashboard header styling */
+.user-dashboard-header {
+  color: #000000; /* Text color */
+  text-align: center;
+  padding: 15px;
+  font-size: 34px;
+  font-weight: bold; /* Add slight curves */
+  margin-bottom: 30px;
+  margin-top: 30px;
+
 }
 
-h3 {
-  color: #3f51b5;
-  margin: 10px 0;
+/* Post Job button (curved style) */
+.post-job-button {
+  background-color: #f3f4f5; /* Button color */
+  color: #120a0a; /* Text color */
+  padding: 10px 20px;
+  border: none; /* Fully curved button */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
-p {
-  color: #757575;
+.post-job-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
-button {
-  margin-top: 10px;
+/* Adjust the type of service dropdown, text area, and input fields */
+select,
+textarea,
+input[type="text"] {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ccc; /* Curved edges */
+  padding: 10px;
+  color: #333333;
+  width: 80%; /* Make fields responsive */
+  margin-bottom: 10px; /* Add spacing */
+}
+
+/* History Section */
+.history-section {
+  background: url('../../../assets/images/backgroundLogin.jpeg') ;/* Light background */
+  color: #333333; /* Text color */
+  padding: 15px;
+  width: 75%; /* Reduce width */
+  margin: 0 auto; /* Center the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 30px;
+}
+
+/* History Heading */
+.history-heading {
+  font-size: 20px;
+  color: white; /* Dark blue text */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+
+/* History Buttons Container */
+.history-buttons-container {
+  display: flex;
+  flex-direction: row; /* Stack buttons vertically */
+  gap: 10px; /* Space between buttons */
+  align-items: center; /* Center buttons horizontally */
+}
+
+/* Individual History Buttons */
+.history-button {
+  background-color: #f9fbfc; /* Blue background */
+  color: rgb(11, 6, 6); /* White text */
+  border: none;
+  padding: 12px 20px;
+  width: 200px; /* Fixed button width */ /* Rounded corners */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect for History Buttons */
+.history-button:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+/* Search Section */
+.search-for-wash {
+  background: url('../../../assets/images/backgroundLogin.jpeg') ; /* Light background */
+  color: #333333; /* Text color */
+  padding: 20px;
+  width: 75%;
+  margin: 0 auto; /* Center the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  margin-top: -1210px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 30px;
+}
+
+h3{
+  color: aliceblue;
+}
+/* Search Heading */
+.search-heading {
+  font-size: 20px;
+  color: white; /* Dark blue text */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Search Buttons Container */
+.search-buttons-container {
+  display: flex;
+  flex-direction: row; /* Align buttons vertically */
+  gap: 10px; /* Space between buttons */
+  align-items: center; /* Center align buttons */
+}
+
+/* Individual Search Buttons */
+.search-button {
+  background-color: #fcfdfd; /* Blue background */
+  color: rgb(2, 1, 1); /* White text */
+  border: none;
+  padding: 12px 20px;
+  width: 200px; /* Fixed button width */
+ /* Rounded corners */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect for Search Buttons */
+.search-button:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+.carousel-inner img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.left-buttons {
+  display: flex;
+  flex-direction: column;
+  background: url('../../../assets/images/backgroundLogin.jpeg') ; /* Light background */
+  color: #333333; /* Text color */
+  padding: 10px;
+  width: 250px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-left: 35px;
+}
+
+.left-buttons button {
+  margin-bottom: 50px;
+  padding: 12px;
+background-color: white;
+  color: rgb(0, 0, 0);
+  border: black;
+  border-radius: 4px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.left-buttons button:hover {
+  background-color: #74a4b4;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
 }

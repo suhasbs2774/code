@@ -9,9 +9,12 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
- constructor(private router:Router) {}
- gotoHome() {
-  this.router.navigate(['/home']);  // define your component where you want to go
+  email='';
+ constructor(private router:Router) {
+  console.log(router)
+ }
+ gotoDashboard() {
+  this.router.navigate(['/dashboard']);  // define your component where you want to go
  }
 
 }

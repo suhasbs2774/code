@@ -1,27 +1,68 @@
-<div class="login-container">
-  <!-- Left Section -->
-  <div class="image-section">
-    <img src="../../../assets/images/service1.jpg" alt="Nike Shoe" class="shoe-image" />
-  </div>
+<div class="containerText">
+  <div class="section row">
+    <div class="col">
+      <form class="form">
+        <h2 class="mb-8">Login</h2>
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text">Email</span>
+          <input type="email" class="form-control col-3" id="floatingInput" placeholder="Enter your email">
 
-  <!-- Right Section -->
-  <div class="form-section">
-    <img src="../../../assets/images/waveWashlogo.jpg" alt="Nike Logo" class="logo" />
-    <form class="login-box">
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <div class="radio-group">
-        <label>
-          <input type="radio" name="vendor" />
-          I am Vendor
-        </label>
-        <label>
-          <input type="radio" name="user" />
-          I am User
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text">Password</span>
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Enter your password">
+        </div>
+
+       <div class="mb-3">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">User</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">Vendor</label>
+        </div>
+       </div>
+        
+       <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Remember Me
         </label>
       </div>
-      <a href="#" class="forgot-password">Forgot Password?</a>
-      <button type="submit" class="btn">LOGIN</button>
-    </form>
+        <button type="submit" class="btn btn-primary" (click)="gotoDashboard()">Sign in</button>
+        <br>
+        <button type="button" class="btn btn-link">Not registered? Create an account</button>
+      </form>
+    </div>
+    <div class="col">
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="../../../assets/images/service1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="../../../assets/images/service2(bike).jpg"  class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="../../../assets/images/service3(pet).jpg" class="d-block w-100" alt="...">
+          </div>
+          <!-- <div class="carousel-item" data-bs-interval="2000">
+            <img src="../../../assets/images/service4(aquarium).jpg" class="d-block w-100" alt="...">
+          </div> -->
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="../../../assets/images/service5(sofa).jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
