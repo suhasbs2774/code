@@ -2,7 +2,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -15,7 +16,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { MatGridListModule } from '@angular/material/grid-list'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,10 +31,14 @@ import { HomeComponent } from './components/home/home.component';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
     MatCheckboxModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatGridListModule
   ],
   providers: [
     provideAnimationsAsync()

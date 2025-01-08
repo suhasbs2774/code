@@ -1,83 +1,86 @@
-<br><br>
-<div class="left-buttons">
-<h3><b>USER DASHBOARD</b></h3>
-  <br><br>
-  <button>Personal Details</button>
-  <button>Edit Profile</button>
-  <button>Change Address</button>
-  <button>City</button>
-  <button>Phone Number</button>
-  <button>Post an Ad</button>
-  <button>Select Services</button>
-  <button>History</button>
-  <button>Book the Services</button>
-  <button>Display Vendors with Price</button>
-  <br><br>
+<div class="sidebar">
+  <h2>User Dashboard</h2>
+  <a href="#">Home</a><br>
+  <a href="#">Search for Wash</a><br>
+  <a href="#">Post a Job</a><br>
+  <a href="#">History</a><br>
+  <a href="#">Profile</a><br>
+  <a href="#">Completed Services</a><br>
+  <a href="#">Active Ads</a><br>
+  <a href="#">Expired Ads</a><br>
+
 </div>
+
 <div class="main-content">
-<!-- Search Section -->
-<div class="search-for-wash">
-  <h3 class="search-heading">Search for a Wash</h3>
-  <br>
-  <div class="search-buttons-container">
-    <button class="search-button">Car Wash</button>
-    <button class="search-button">Bike Wash</button>
-    <button class="search-button">Tank/Sump Wash</button>
-    <button class="search-button">Pet Wash</button>
-    <button class="search-button">Gardening</button>
-  </div><br>
-
-  <!-- Add Carousel -->
-  <div id="carouselExample" class="carousel slide mt-3" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../../../assets/images/service1.jpg" class="d-block w-48" alt="Image 1">
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/images/service2(bike).jpg" class="d-block w-48" alt="Image 2">
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/images/service4(aquarium).jpg" class="d-block w-48" alt="Image 3">
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/images/service2(bike).jpg" class="d-block w-48" alt="Image 3">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
-
-<div class="main-box post-job">
-  <h3 class="postjob-heading">Post a Job</h3><br>
-  <select class="type-of-service">
-    <option>Bike Wash</option>
-    <option>Car Wash</option>
-    <option>Pet wash</option>
-  </select>
-  <textarea placeholder="Describe the service"></textarea>
-  <input type="text" placeholder="Enter address" />
-  <input type="text" placeholder="Expiration Time (e.g., 30 mins)" />
-  <input type="file"/>
-
-  <button class="post-job-button">Post Job</button>
-</div>
-
-<div class="history-section">
-  <h3 class="history-heading">History</h3>
-  <br><br>
-  <div class="history-buttons-container">
-    <button class="history-button">Active Ads</button>
-    <button class="history-button">Expired Ads</button>
-    <button class="history-button">Completed Services</button>
+    
+      <!-- Card 1 with User Details -->
+      
+        <mat-card class="hover-card">
+          <mat-card-header>
+            <mat-card-title>User Profile</mat-card-title>
+          <br>
+          </mat-card-header>
+          <mat-card-content>
+            <br>
+            <div class="user-profile">
+              <br>
+              <img class="user-image" src="../../../assets/images/dp2.jpg" alt="User Image"  width="35%"/>
+              <br>
+              <div class="user-details">
+                <p><strong>User-name:</strong> Suhas BS</p>
+                <p><strong>Age:</strong> 22</p>
+                <p><strong>DOB:</strong> 27/1/2004</p>
+                <p><strong>Email:</strong> suhas.bsexample.com</p>
+                <p><strong>Location:</strong> Mysore, Karnataka</p>
+                <p><strong>Pin-code:</strong> 573-123</p>
+                <p><strong>Conact no:</strong> +91 1234567891</p>
+                </div>
+              </div>
+          </mat-card-content>
+        </mat-card>
+      
+  <br><br><br>
+      <!-- Card 2 with Recent Payments -->
+    
+      <mat-card class="hover-card">
+        <mat-card-header>
+          <mat-card-title>Recent Payments</mat-card-title><br>
+          <br>
+          <mat-card-subtitle>Last 5 Transactions</mat-card-subtitle><br>
+        </mat-card-header>
+        <mat-card-content>
+          <br>
+          <div class="recent-payments">
+            <!-- Static Payments List using ngFor -->
+            <div class="payment-item" *ngFor="let payment of [
+              { image: '../../../assets/images/p1.jpg', title: 'UPI Transfer', date: 'Jan 5, 2025', amount: '$200' },
+              { image: '../../../assets/images/p2.jpg', title: 'PayPal Invoice', date: 'Jan 3, 2025', amount: '$300' },
+              { image: '../../../assets/images/p3.jpg', title:  'Bank Transfer', date: 'Jan 2, 2025', amount: '$450' },
+              { image: '../../../assets/images/p4.jpg', title: 'Cash Deposit', date: 'Jan 1, 2025', amount: '$150' }
+            ]">
+              <img class="payment-icon" [src]="payment.image" alt="{{ payment.title }}" />
+              <div class="payment-details">
+                <p><strong>{{ payment.title }}</strong></p>
+                <p>{{ payment.date }}</p>
+              </div>
+              <p class="payment-amount">{{ payment.amount }}</p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    
     <br><br><br>
+      
+        <mat-card class="hover-card">
+          <mat-card-header>
+            <mat-card-title>Card 3</mat-card-title>
+            <mat-card-subtitle>Extra Details</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="card3">
+            <p>Include any additional data or visuals in Card 3!</p>
+          </div>
+          </mat-card-content>
+        </mat-card>
+     <br><br><br>
   </div>
-</div>
-</div>
-

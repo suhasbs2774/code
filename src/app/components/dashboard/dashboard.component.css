@@ -1,222 +1,116 @@
-/* General styling for main boxes (Search for Wash, Post Job, History) */
-.main-box {
-  /*background-color: #f5f5f5; */
-  background: url('../../../assets/images/backgroundLogin.jpeg') ;
-  color: #333333; /* Text color */
-  padding: 45px;
-  width: 75%; /* Reduce width */
-  margin: 0 auto; /* Center the box */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-  margin-bottom: 25px;
-  margin-top: 25px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin-right: 30px;
-}
-
-.postjob-heading{
-  font-size: 20px;
-  color: white; /* Dark blue text */
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-/* User Dashboard header styling */
-.user-dashboard-header {
-  color: #000000; /* Text color */
-  text-align: center;
-  padding: 15px;
-  font-size: 34px;
-  font-weight: bold; /* Add slight curves */
-  margin-bottom: 30px;
-  margin-top: 30px;
-
-}
-
-/* Post Job button (curved style) */
-.post-job-button {
-  background-color: #f3f4f5; /* Button color */
-  color: #120a0a; /* Text color */
-  padding: 10px 20px;
-  border: none; /* Fully curved button */
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.post-job-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Adjust the type of service dropdown, text area, and input fields */
-select,
-textarea,
-input[type="text"] {
-  background-color: #ffffff; /* White background */
-  border: 1px solid #ccc; /* Curved edges */
-  padding: 10px;
-  color: #333333;
-  width: 80%; /* Make fields responsive */
-  margin-bottom: 10px; /* Add spacing */
-}
-
-/* History Section */
-.history-section {
-  background: url('../../../assets/images/backgroundLogin.jpeg') ;/* Light background */
-  color: #333333; /* Text color */
-  padding: 15px;
-  width: 75%; /* Reduce width */
-  margin: 0 auto; /* Center the box */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin-right: 30px;
-}
-
-/* History Heading */
-.history-heading {
-  font-size: 20px;
-  color: white; /* Dark blue text */
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-
-/* History Buttons Container */
-.history-buttons-container {
-  display: flex;
-  flex-direction: row; /* Stack buttons vertically */
-  gap: 10px; /* Space between buttons */
-  align-items: center; /* Center buttons horizontally */
-}
-
-/* Individual History Buttons */
-.history-button {
-  background-color: #f9fbfc; /* Blue background */
-  color: rgb(11, 6, 6); /* White text */
-  border: none;
-  padding: 12px 20px;
-  width: 200px; /* Fixed button width */ /* Rounded corners */
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Hover Effect for History Buttons */
-.history-button:hover {
-  background-color: #0056b3; /* Darker blue */
-  transform: translateY(-2px); /* Lift effect */
-}
-
-/* Search Section */
-.search-for-wash {
-  background: url('../../../assets/images/backgroundLogin.jpeg') ; /* Light background */
-  color: #333333; /* Text color */
-  padding: 20px;
-  width: 75%;
-  margin: 0 auto; /* Center the box */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-  margin-top: -1210px;
-  margin-bottom: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin-right: 30px;
-}
-
-h3{
-  color: aliceblue;
-}
-/* Search Heading */
-.search-heading {
-  font-size: 20px;
-  color: white; /* Dark blue text */
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-/* Search Buttons Container */
-.search-buttons-container {
-  display: flex;
-  flex-direction: row; /* Align buttons vertically */
-  gap: 10px; /* Space between buttons */
-  align-items: center; /* Center align buttons */
-}
-
-/* Individual Search Buttons */
-.search-button {
-  background-color: #fcfdfd; /* Blue background */
-  color: rgb(2, 1, 1); /* White text */
-  border: none;
-  padding: 12px 20px;
-  width: 200px; /* Fixed button width */
- /* Rounded corners */
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Hover Effect for Search Buttons */
-.search-button:hover {
-  background-color: #0056b3; /* Darker blue */
-  transform: translateY(-2px); /* Lift effect */
-}
-
-.carousel-inner img {
-  max-height: 300px;
-  object-fit: cover;
-}
-
 body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
   margin: 0;
-  font-family: Arial, sans-serif;
 }
 
-
-
-.left-buttons {
-  display: flex;
-  flex-direction: column;
-  background: url('../../../assets/images/backgroundLogin.jpeg') ; /* Light background */
-  color: #333333; /* Text color */
-  padding: 10px;
+.sidebar {
+  background-color: #005cb2;
+  color: white;
   width: 250px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin-left: 35px;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
 }
 
-.left-buttons button {
-  margin-bottom: 50px;
-  padding: 12px;
-background-color: white;
-  color: rgb(0, 0, 0);
-  border: black;
-  border-radius: 4px;
-  font-size: 18px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 20px;
-  font-family: 'Times New Roman', Times, serif;
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 15px 0;
+  font-size: 1em;
 }
 
-.left-buttons button:hover {
-  background-color: #74a4b4;
+.sidebar a:hover {
+  background-color: #007bff;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .main-content {
-  flex: 1;
+  margin-left: 250px;
   padding: 20px;
+  margin-right: 500px;
+  align-items: flex-start;
+}
+
+/* General Styles */
+.hover-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 0px;
+  background: linear-gradient(to right, grey, grey);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+}
+
+.hover-card:hover {
+  transform: scale(0.9);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #787789, #5f5b9f);
+}
+
+/* User Profile Styles */
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: start;
+  gap: 5px;
+  width: 50%;
+}
+
+.user-image {
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  display: flex;
   flex-direction: column;
+}
+
+/* Recent Payments Styles */
+.recent-payments {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-self: start;
+}
+
+.payment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
-  box-sizing: border-box;
+  border-radius: 8px;
+  background: #f9f9f9;
+  transition: background 0.3s,transform 0.3s;
+}
+
+.payment-item:hover {
+  background: #e0f7fa;
+}
+
+.payment-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.payment-details {
+  flex: 1;
+  padding-left: 10px;
+}
+
+.payment-amount {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.card3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: start;
+  gap: 5px;
 }
