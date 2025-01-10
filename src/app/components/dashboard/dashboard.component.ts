@@ -10,17 +10,46 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
 
+
   constructor(private router:Router) {}
+  
     scrollTo(sectionId: HTMLElement): void {
      
       sectionId.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly
+   
     }
+
+  
+
+    
+
 
   temperatures = [
     { name: 'Temperatura Sala', value: 20.7, trend: 80 },
     { name: 'Temperatura Studio', value: 20.7, trend: 70 },
     { name: 'Temperatura Camera 1', value: 19.5, trend: 60 },
     { name: 'Temperatura Camera 2', value: 19.8, trend: 50 },
+  ];
+
+  taskSummary = [
+    {
+      title: 'Car Service',
+      description: 'High-quality car washing and polishing service.',
+      image: 'assets/car-service.jpg',
+      review: 5
+    },
+    {
+      title: 'Bike Service',
+      description: 'Quick and efficient bike servicing with doorstep pickup.',
+      image: 'assets/bike-service.jpg',
+      review: 4
+    },
+    {
+      title: 'Gardening',
+      description: 'Professional gardening service for a beautiful backyard.',
+      image: 'assets/gardening.jpg',
+      review: 4
+    }
   ];
 
   services = [
@@ -81,6 +110,8 @@ export class DashboardComponent {
     }
   ];
 
+  
+
   selectedService: any = null;
   bookedService: any = null;
   paymentMethod: string='';
@@ -115,5 +146,37 @@ export class DashboardComponent {
   }
 
   
+servicess = ['Car Service', 'Bike Service', 'Pet Grooming', 'Gardening', 'Sofa Cleaning'];
+  expiryOptions = ['30 Minutes', '1 Hour', '2 Hours'];
+  post = {
+    service: '',
+    address: '',
+    description: '',
+    expiry: '',
+    file: null
+  };
+  successMessage = '';
+
+  onFileSelect(event: any) {
+    const file = event.target.files[0];
+    this.post.file = file;
+  }
+
+  postAd() {
+    if (this.post.service && this.post.address && this.post.description && this.post.expiry) {
+      this.successMessage = 'Ad posted successfully!';
+      console.log('Ad Details:', this.post);
+      // Reset form after posting
+      this.post = {
+        service: '',
+        address: '',
+        description: '',
+        expiry: '',
+        file: null
+      };
+    } else {
+      this.successMessage = 'Please fill out all fields!';
+    }
+  }
 }
 

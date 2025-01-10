@@ -5,12 +5,13 @@ body {
 }
 
 .sidebar {
-  background-color: #59b1ce;
+  background-color: #0000006e;
   color: rgb(0, 0, 0);
   width: 250px;
   height: 100vh;
   padding: 20px;
   position: fixed;
+  
 }
 
 .sidebar a {
@@ -39,8 +40,7 @@ body {
 }
 
 .dash {
-  /*background: url('../../../assets/images/backgroundLogin.jpeg'); */
-  background-color: #f8f9fa;
+  background-color: #91c1e634; 
   height: 100%;
   background-repeat: repeat;
   background-size: 100%;
@@ -283,5 +283,257 @@ button {
   color: #003566; 
 }
 
+.task-summary {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.task-summary h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.task-card {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.task-card img {
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.task-details {
+  flex: 1;
+}
+
+.task-details h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.task-details p {
+  margin: 5px 0;
+}
+
+.stars {
+  color: #f4c542; /* Star color */
+  font-size: 1.2em;
+}
+
+.completed-card{
+  border-radius: 10px;
+  background: #b7c8c9;
+  box-shadow: 4px;
+  gap: 15px;
+  width: 100%;
+}
 
 
+.card {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  text-align: center;
+}
+
+.card label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.card input,
+.card select,
+.card textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #218838;
+}
+
+.card p {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+.post-card{
+  border-radius: 10px;
+  background: #b7c8c9;
+  box-shadow: 4px;
+  gap: 15px;
+  width: 100%;
+}
+
+
+
+.ad-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px;
+  width: 300px;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: rgb(184, 217, 180);
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-card:hover {
+  transform: scale(1.05);
+  background-color: whitesmoke;
+}
+
+.ad-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ad-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.ad-info h2 {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+}
+
+.ad-description {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.ad-card .ad-header:hover h2 {
+  color: #007BFF;
+}
+
+
+.active-card {
+  border-radius: 10px;
+  background: #84e668;
+  box-shadow: 4px;
+  gap: 15px;
+  width: 100%; 
+}
+
+
+
+.ad-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ad-card1 {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 38%; /* 2 ads per row */
+  margin-left: 15px;
+  margin-right: 15px;
+  font-family: 'Arial', sans-serif;
+  background-color: #b97c7c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.expired-ad-card {
+  background-color: #f0f0f0;
+}
+
+.ad-card1:hover {
+  transform: scale(1.05);
+}
+
+.ad-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.expired-ad-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ad-image, .expired-ad-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.ad-info, .expired-ad-info {
+  width: calc(100% - 75px); /* Adjust to leave space for image */
+}
+
+.ad-info h2, .expired-ad-info h2 {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+}
+
+.ad-description, .expired-ad-description {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.expired-ad-status {
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.ad-row .ad-card1 .ad-header:hover h2, 
+.ad-row .expired-ad-card .expired-ad-header:hover h2 {
+  color: #000000;
+}
+
+
+.ex-card {
+  border-radius: 10px;
+  background: #e66868;
+  box-shadow: 4px;
+  gap: 15px;
+  width: 100%; 
+}
