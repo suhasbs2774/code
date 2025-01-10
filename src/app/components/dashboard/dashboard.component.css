@@ -5,8 +5,8 @@ body {
 }
 
 .sidebar {
-  background-color: #005cb2;
-  color: white;
+  background-color: #59b1ce;
+  color: rgb(0, 0, 0);
   width: 250px;
   height: 100vh;
   padding: 20px;
@@ -15,7 +15,7 @@ body {
 
 .sidebar a {
   display: block;
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   margin: 15px 0;
   font-size: 1em;
@@ -35,22 +35,30 @@ body {
   padding: 20px;
   margin-right: 500px;
   align-items: flex-start;
+  
+}
+
+.dash {
+  /*background: url('../../../assets/images/backgroundLogin.jpeg'); */
+  background-color: #f8f9fa;
+  height: 100%;
+  background-repeat: repeat;
+  background-size: 100%;
+  display: flex;
+  flex: cover;
+  
 }
 
 /* General Styles */
 .hover-card {
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-radius: 0px;
-  background: linear-gradient(to right, grey, grey);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  border-radius: 10px;
+  background: #b7c8c9;
+  box-shadow: 4px;
   gap: 15px;
 }
 
-.hover-card:hover {
-  transform: scale(0.9);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(to right, #787789, #5f5b9f);
-}
+
 
 /* User Profile Styles */
 .user-profile {
@@ -60,6 +68,7 @@ body {
   align-self: start;
   gap: 5px;
   width: 50%;
+  color:#333333;
 }
 
 .user-image {
@@ -75,6 +84,7 @@ body {
   flex-direction: row;
   gap: 10px;
   align-self: start;
+
 }
 
 .payment-item {
@@ -83,7 +93,7 @@ body {
   justify-content: space-between;
   padding: 10px;
   border-radius: 8px;
-  background: #f9f9f9;
+  background: #fefefe;
   transition: background 0.3s,transform 0.3s;
 }
 
@@ -107,10 +117,171 @@ body {
   color: #4caf50;
 }
 
-.card3 {
+/* General Layout */
+
+
+/* Card Styles */
+.service-card, .shop-card, .confirmation-card {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background: #b7c8c9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Service Box Styles */
+.service-boxes, .shop-boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.service-box, .shop-box {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  width: 150px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-box:hover, .shop-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Price Styling */
+.shop-box .price {
+  font-weight: bold;
+  color: #28a745; /* Green color for price */
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Confirmation Box */
+.confirmation-card {
+  background: #e7f7e6;
+  border: 2px solid #28a745;
+  color: #155724;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-box, .shop-box {
+    width: 120px;
+  }
+}
+
+/* Payment Methods */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.payment-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 190px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.payment-button:hover {
+  background-color: #0056b3;
+}
+
+/* Loading Spinner */
+.loading-spinner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: start;
-  gap: 5px;
+  justify-content: center;
+  margin-top: 20px;
 }
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Confirmation Card */
+.final-confirmation-card {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #d4edda;
+  border: 1px solid #3c763d;
+  border-radius: 5px;
+  color: #3c763d;
+  font-size: 18px;
+  text-align: center;
+  
+}
+
+.final-confirmation-card h3 {
+  margin-bottom: 10px;
+}
+
+
+button {
+  width: 100%;
+  padding: 12px 20px;
+  gap: 20px;
+  color: rgb(234, 221, 221);
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #00509e; 
+    color: #ffc300; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+
+  &:focus {
+    outline: none;
+    background: #ffc300;
+    color: #003566; 
+  }
+}
+
+&.active button {
+  background: #ffc300; 
+  color: #003566; 
+}
+
+
+

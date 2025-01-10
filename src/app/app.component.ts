@@ -36,6 +36,7 @@ export class AppComponent {
         if (data.url.includes('login')) {
           this.displayHeaderFooter = false;
         }
+        
       }
     });
   }

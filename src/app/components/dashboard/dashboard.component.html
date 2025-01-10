@@ -1,20 +1,28 @@
+<div class="dash">
 <div class="sidebar">
   <h2>User Dashboard</h2>
   <a href="#">Home</a><br>
-  <a href="#">Search for Wash</a><br>
-  <a href="#">Post a Job</a><br>
-  <a href="#">History</a><br>
-  <a href="#">Profile</a><br>
-  <a href="#">Completed Services</a><br>
-  <a href="#">Active Ads</a><br>
-  <a href="#">Expired Ads</a><br>
+  <button (click)="scrollTo(section1)"  class="mat-button-sm" mat-button>Search for Wash
+  </button><br>
+  <button (click)="scrollTo(section3)"  class="mat-button-sm" mat-button>Post a Ad
+  </button><br>
+  <button (click)="scrollTo(section3)"  class="mat-button-sm" mat-button>Recent Payments
+  </button><br>
+  <button (click)="scrollTo(section2)"  class="mat-button-sm" mat-button>User Profile
+  </button><br>
+  <button (click)="scrollTo(section3)"  class="mat-button-sm" mat-button>Completed Services
+  </button><br>
+  <button (click)="scrollTo(section3)"  class="mat-button-sm" mat-button>Active Ads
+  </button><br>
+  <button (click)="scrollTo(section3)"  class="mat-button-sm" mat-button>Expired Ads
+  </button><br>
 
 </div>
 
 <div class="main-content">
     
       <!-- Card 1 with User Details -->
-      
+      <div #section2>
         <mat-card class="hover-card">
           <mat-card-header>
             <mat-card-title>User Profile</mat-card-title>
@@ -38,10 +46,10 @@
               </div>
           </mat-card-content>
         </mat-card>
-      
+      </div>
   <br><br><br>
       <!-- Card 2 with Recent Payments -->
-    
+    <div #section3>
       <mat-card class="hover-card">
         <mat-card-header>
           <mat-card-title>Recent Payments</mat-card-title><br>
@@ -68,19 +76,70 @@
           </div>
         </mat-card-content>
       </mat-card>
-    
+    </div>
     <br><br><br>
       
-        <mat-card class="hover-card">
-          <mat-card-header>
-            <mat-card-title>Card 3</mat-card-title>
-            <mat-card-subtitle>Extra Details</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <div class="card3">
-            <p>Include any additional data or visuals in Card 3!</p>
+  
+<div #section1>
+          <mat-card class="service-card">
+            <h2>Select a Service</h2>
+            <div class="service-boxes">
+              <div
+                *ngFor="let service of services"
+                class="service-box"
+                (click)="selectService(service)"
+              >
+                <img [src]="service.image" alt="{{ service.name }}">
+                <p>{{ service.name }}</p>
+              </div>
+            </div>
+          </mat-card>
+          <br><br><br>
+          <!-- List of Shops for Selected Service -->
+          <mat-card *ngIf="selectedService" class="shop-card">
+            <h3>Select a Shop for {{ selectedService.name }}</h3>
+            <div class="shop-boxes">
+              <div
+                *ngFor="let shop of selectedService.shops"
+                class="shop-box"
+                (click)="bookService(shop)"
+              >
+                <p>{{ shop.name }}</p>
+                <p class="price">{{ shop.price }}</p>
+              </div>
+            </div>
+          </mat-card>
+          <br><br>
+          <!-- Confirmation Message -->
+          <mat-card *ngIf="bookedService" class="confirmation-card">
+            <h3>Booked Service</h3>
+            <p>You have booked {{ bookedService.shop.name }} for {{ bookedService.service.name }} at {{ bookedService.shop.price }}</p>
+        
+        
+          <h4>Select Payment Method</h4>
+          <div class="payment-methods">
+            <button (click)="paymentMethod = 'UPI'; bookedService()" class="payment-button">UPI</button>
+            <button (click)="paymentMethod = 'PayPal'; bookedService()" class="payment-button">PayPal</button>
+            <button (click)="paymentMethod = 'Cash'; bookedService()" class="payment-button">Cash</button>
+            <button (click)="paymentMethod = 'Bank Transfer'; bookedService()" class="payment-button">Bank Transfer</button>
           </div>
-          </mat-card-content>
+          <!-- Loading Spinner -->
+          <div *ngIf="isLoading" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Processing payment...</p>
+          </div>
         </mat-card>
-     <br><br><br>
-  </div>
+        
+        <!-- Final Confirmation Message -->
+        <mat-card *ngIf="finalConfirmation" class="final-confirmation-card">
+          <h3>Booking Confirmed</h3>
+          <p>Your service {{ bookedService.service.name }} at {{ bookedService.shop.name }} has been confirmed with payment via {{ paymentMethod }}.</p>
+        'finalConfirmation()'
+        </mat-card>
+        
+<br>
+
+</div>
+</div>
+<br><br><br>
+
