@@ -7,11 +7,24 @@
       <button class="leftOpen" *ngIf="displaySideBar"
         (click)="displaySideBar=false"><mat-icon>keyboard_double_arrow_left</mat-icon></button>
     </div>
+    
+    
 
     <button (click)="navigateToHome()" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">HOME</span>
-      <mat-icon>home</mat-icon>
-    </button>
+      <mat-icon>home</mat-icon></button>
+
+      <button (click)="scrollTo(section2)" class="mat-button-sm" mat-button>
+        <span *ngIf="displaySideBar">User Profile</span>
+        <mat-icon>person</mat-icon>
+      </button>
+
+      <button (click)="scrollTo(section3)" class="mat-button-sm" mat-button>
+        <span *ngIf="displaySideBar">Recent Payments</span>
+        <mat-icon>payments</mat-icon>
+      </button>
+
+    
     <button (click)="scrollTo(section1)" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">Search for Wash</span>
       <mat-icon>search</mat-icon>
@@ -20,22 +33,18 @@
       <span *ngIf="displaySideBar">Completed Services</span>
       <mat-icon>checklist</mat-icon>
     </button>
-    <button (click)="scrollTo(section3)" class="mat-button-sm" mat-button>
-      <span *ngIf="displaySideBar">Recent Payments</span>
-      <mat-icon>payments</mat-icon>
-    </button>
-    <button (click)="scrollTo(section2)" class="mat-button-sm" mat-button>
-      <span *ngIf="displaySideBar">User Profile</span>
-      <mat-icon>person</mat-icon>
-    </button>
+    
+    
     <button (click)="scrollTo(section5)" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">Post and Ad</span>
       <mat-icon>post_add</mat-icon>
     </button>
+
     <button (click)="scrollTo(section6)" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">Active Ads</span>
       <mat-icon>check_circle</mat-icon>
     </button>
+
     <button (click)="scrollTo(section7)" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">Expired Ads</span>
       <mat-icon>cancel</mat-icon>
