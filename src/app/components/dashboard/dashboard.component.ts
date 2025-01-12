@@ -153,7 +153,7 @@ export class DashboardComponent {
     this.paymentMethod = method;
     this.isLoading = true;
     setTimeout(() => {
-      this.isLoading = false;
+      this.isLoading = true;
       this.finalConfirmation = true;
       this.finalConfirmation = true;
     }, 200);
