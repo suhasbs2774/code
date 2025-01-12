@@ -211,20 +211,15 @@
             Transfer</button>
         </div>
         <!-- Loading Spinner -->
-        <div *ngIf="isLoading" class="loading-spinner">
-          <div class="spinner"></div>
-          <p>Processing payment...</p>
-        </div>
-      </mat-card>
+        <br>
 
       <!-- Final Confirmation Message -->
-      <mat-card *ngIf="finalConfirmation" class="final-confirmation-card">
-        <h3>Booking Confirmed</h3>
+      
         <p>Your service {{ bookedService.service.name }} at {{ bookedService.shop.name }} has been confirmed with
           payment via {{ paymentMethod }}.</p>
-        'finalConfirmation()'
+        
+     
       </mat-card>
-
 
     </div>
 
