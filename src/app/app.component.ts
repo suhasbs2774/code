@@ -33,7 +33,7 @@ export class AppComponent {
     this.route.events.subscribe((data) => {
       if (data instanceof NavigationEnd) {
         console.log(data);
-        if (data.url.includes('login') || data.url.includes('dashboard')) {
+        if (data.url.includes('login') || data.url.includes('dashboard') || data.url.includes('reg')) {
           this.displayHeaderFooter = false;
         }
         
