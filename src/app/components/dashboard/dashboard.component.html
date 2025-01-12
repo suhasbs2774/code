@@ -1,60 +1,135 @@
 <div class="dash">
-<div class="sidebar">
-  <h2>User Dashboard</h2>
-  <a href="#">Home</a><br>
-  <button (click)="scrollTo(section1)"  class="mat-button-sm" mat-button>Search for Wash
-  </button><br>
-  <button (click)="scrollTo(section4)"  class="mat-button-sm" mat-button>Completed Services
-  </button><br>
-  <button (click)="scrollTo(section3)"  class="mat-button-sm" mat-button>Recent Payments
-  </button><br>
-  <button (click)="scrollTo(section2)"  class="mat-button-sm" mat-button>User Profile
-  </button><br>
-  <button (click)="scrollTo(section5)"  class="mat-button-sm" mat-button>Post and Ad
-  </button><br>
-  <button (click)="scrollTo(section6)"  class="mat-button-sm" mat-button>Active Ads
-  </button><br>
-  <button (click)="scrollTo(section7)"  class="mat-button-sm" mat-button>Expired Ads
-  </button><br>
+  <div class="sidebar">
+    <div class="menuHeader">
+      <h3 *ngIf="displaySideBar">Dashboard</h3>
+      <button class="leftOpen" *ngIf="!displaySideBar"
+        (click)="displaySideBar=true"><mat-icon>keyboard_double_arrow_right</mat-icon></button>
+      <button class="leftOpen" *ngIf="displaySideBar"
+        (click)="displaySideBar=false"><mat-icon>keyboard_double_arrow_left</mat-icon></button>
+    </div>
 
-</div>
+    <button (click)="navigateToHome()" class="mat-button-sm" mat-button>
+      <span *ngIf="displaySideBar">HOME</span>
+      <mat-icon>home</mat-icon>
+    </button>
+    <button (click)="scrollTo(section1)" class="mat-button-sm" mat-button>
+      <span *ngIf="displaySideBar">Search for Wash</span>
+      <mat-icon>search</mat-icon>
+    </button>
+    <button (click)="scrollTo(section4)" class="mat-button-sm" mat-button>
+      <span *ngIf="displaySideBar">Completed Services</span>
+      <mat-icon>checklist</mat-icon>
+    </button>
+    <button (click)="scrollTo(section3)" class="mat-button-sm" mat-button>
+      <span *ngIf="displaySideBar">Recent Payments</span>
+      <mat-icon>payments</mat-icon>
+    </button>
+    <button (click)="scrollTo(section2)" class="mat-button-sm" mat-button>
+      <span *ngIf="displaySideBar">User Profile</span>
+      <mat-icon>person</mat-icon>
+    </button>
+    <button (click)="scrollTo(section5)" class="mat-button-sm" mat-button>
+      <span *ngIf="displaySideBar">Post and Ad</span>
+      <mat-icon>post_add</mat-icon>
+    </button>
+    <button (click)="scrollTo(section6)" class="mat-button-sm" mat-button>
+      <span *ngIf="displaySideBar">Active Ads</span>
+      <mat-icon>check_circle</mat-icon>
+    </button>
+    <button (click)="scrollTo(section7)" class="mat-button-sm" mat-button>
+      <span *ngIf="displaySideBar">Expired Ads</span>
+      <mat-icon>cancel</mat-icon>
+    </button>
 
-<div class="main-content">
-    
-      <!-- Card 1 with User Details -->
-      <div #section2>
-        <mat-card class="hover-card">
-          <mat-card-header>
-            <mat-card-title><pre>User Profile</pre></mat-card-title>
+  </div>
+
+  <div class="main-content" [style.margin-left]="displaySideBar?'270px':'140px'">
+
+    <!-- Card 1 with User Details -->
+    <div #section2>
+      <mat-card class="hover-card">
+        <mat-card-header>
+          <mat-card-title>
+            <pre class="textBlueColor">User Profile    <mat-icon class="editProfile" (click)="editUser()" color="primary">edit</mat-icon></pre>
+          
+            
+          </mat-card-title>
           <br>
-          </mat-card-header>
-          <mat-card-content>
+        </mat-card-header>
+        <mat-card-content>
+          
+          <div class="user-profile">
             <br>
-            <div class="user-profile">
-              <br>
-              <img class="user-image" src="../../../assets/images/dp2.jpg" alt="User Image"  width="35%"/>
-              <br>
-              <div class="user-details">
-                <p><strong>User-name:</strong> Suhas BS</p>
-                <p><strong>Age:</strong> 22</p>
-                <p><strong>DOB:</strong> 27/1/2004</p>
-                <p><strong>Email:</strong> suhas.bsexample.com</p>
-                <p><strong>Location:</strong> Mysore, Karnataka</p>
-                <p><strong>Pin-code:</strong> 573-123</p>
-                <p><strong>Conact no:</strong> +91 1234567891</p>
+            <img class="user-image" src="../../../assets/images/dp2.jpg" alt="User Image" width="35%" />
+            <br>
+            <div class="user-details" *ngIf="!editUserForm">
+              <p><strong>User-name: </strong> {{user.name}}</p>
+              <p><strong>Age:</strong> {{user.age}}</p>
+              <p><strong>DOB:</strong> {{user.dob | date: 'dd/MM/yyyy' }}</p>
+              <p><strong>Email:</strong> {{user.email}}</p>
+              <p><strong>Location:</strong>{{user.address}}</p>
+              <p><strong>Pin-code:</strong> {{user.pin}}</p>
+              <p><strong>Conact no:</strong>{{user.phone}}</p>
+            </div>
+            <div *ngIf="editUserForm" class="user-details" >
+            <form>
+              <div class="row">
+                <div class="col-5">
+                  <label for="name">User Name</label>
+                  <input [(ngModel)]="user.name" type="text" [ngModelOptions]="{standalone: true}" id="name">
+                </div>
+                <div class="col-5">
+                  <label for="age">Age</label>
+                  <input type="number" [(ngModel)]="user.age"  [ngModelOptions]="{standalone: true}" id="age">
                 </div>
               </div>
-          </mat-card-content>
-        </mat-card>
-      </div>
-  <br><br><br>
-      <!-- Card 2 with Recent Payments -->
+              <div class="row">
+                <div class="col-5">
+                  <label for="dob">Date Of Birth</label>
+                  <input id="dob" [(ngModel)]="user.dob"  [ngModelOptions]="{standalone: true}" type="date">
+                </div>
+                <div class="col-5">
+                  <label for="pin">Pin-Code</label>
+                  <input id="pin" [(ngModel)]="user.pin"  [ngModelOptions]="{standalone: true}" type="text">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-10">
+                  <label for="location">location</label>
+                  <textarea id="location" [(ngModel)]="user.address"  [ngModelOptions]="{standalone: true}"></textarea>
+                </div>
+                
+              </div>
+              <div class="row">
+                <div class="col-5">
+                  <label for="email">Email Address</label>
+                  <input id="email" [(ngModel)]="user.email"  [ngModelOptions]="{standalone: true}" type="email">
+                </div>
+                <div class="col-5">
+                  <label for="phone">Contact Number</label>
+                  <input id="phone" [(ngModel)]="user.phone"  [ngModelOptions]="{standalone: true}" type="tel">
+                </div>
+              </div>
+              <div style="width:100%">
+                <button style="margin:auto; width:fit-content;" type="submit" (click)="updateUser()">Update</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Card 2 with Recent Payments -->
     <div #section3>
       <mat-card class="hover-card">
         <mat-card-header>
-          <mat-card-title> <pre>Recent Payments</pre></mat-card-title><br>
+          <mat-card-title>
+            <pre class="textBlueColor">Recent Payments</pre>
+          </mat-card-title><br>
           <br>
-          <mat-card-subtitle>Last 5 Transactions</mat-card-subtitle><br>
+          <mat-card-subtitle class="paymentSubtitle"><mat-icon>history</mat-icon>Last 5
+            Transactions</mat-card-subtitle><br>
         </mat-card-header>
         <mat-card-content>
           <br>
@@ -77,163 +152,188 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <br><br><br>
-      
-  
-<div #section1>
-          <mat-card class="service-card">
-            <h2><pre>Select a Service</pre></h2>
-            <div class="service-boxes">
-              <div
-                *ngFor="let service of services"
-                class="service-box"
-                (click)="selectService(service)"
-              >
-                <img [src]="service.image" alt="{{ service.name }}">
-                <p>{{ service.name }}</p>
-              </div>
-            </div>
-          </mat-card>
-          <br><br><br>
-          <!-- List of Shops for Selected Service -->
-          <mat-card *ngIf="selectedService" class="shop-card">
-            <h3>Select a Shop for {{ selectedService.name }}</h3>
-            <div class="shop-boxes">
-              <div
-                *ngFor="let shop of selectedService.shops"
-                class="shop-box"
-                (click)="bookService(shop)"
-              >
-                <p>{{ shop.name }}</p>
-                <p class="price">{{ shop.price }}</p>
-              </div>
-            </div>
-          </mat-card>
-          <br><br>
-          <!-- Confirmation Message -->
-          <mat-card *ngIf="bookedService" class="confirmation-card">
-            <h3>Booked Service</h3>
-            <p>You have booked {{ bookedService.shop.name }} for {{ bookedService.service.name }} at {{ bookedService.shop.price }}</p>
-        
-        
-          <h4> <pre>Select Payment Method</pre></h4>
-          <div class="payment-methods">
-            <button (click)="paymentMethod = 'UPI'; bookedService()" class="payment-button">UPI</button>
-            <button (click)="paymentMethod = 'PayPal'; bookedService()" class="payment-button">PayPal</button>
-            <button (click)="paymentMethod = 'Cash'; bookedService()" class="payment-button">Cash</button>
-            <button (click)="paymentMethod = 'Bank Transfer'; bookedService()" class="payment-button">Bank Transfer</button>
+
+
+
+    <div #section1>
+      <mat-card class="service-card">
+        <mat-card-header>
+          <mat-card-title>
+            <pre class="textBlueColor">Select a Service</pre>
+          </mat-card-title><br>
+        </mat-card-header>
+        <!-- <h2>
+          <pre class="textBlueColor">Select a Service</pre>
+        </h2> -->
+        <div class="service-boxes">
+          <div *ngFor="let service of services" class="service-box" (click)="selectService(service)">
+            <img [src]="service.image" alt="{{ service.name }}">
+            <p>{{ service.name }}</p>
           </div>
-          <!-- Loading Spinner -->
-          <div *ngIf="isLoading" class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Processing payment...</p>
+        </div>
+      </mat-card>
+
+      <!-- List of Shops for Selected Service -->
+      <mat-card *ngIf="selectedService" class="shop-card">
+        <h3>Select a Shop for {{ selectedService.name }}</h3>
+        <div class="shop-boxes">
+          <div *ngFor="let shop of selectedService.shops" class="shop-box" (click)="bookService(shop)">
+            <p>{{ shop.name }}</p>
+            <p class="price">{{ shop.price }}</p>
           </div>
-        </mat-card>
-        
-        <!-- Final Confirmation Message -->
-        <mat-card *ngIf="finalConfirmation" class="final-confirmation-card">
-          <h3>Booking Confirmed</h3>
-          <p>Your service {{ bookedService.service.name }} at {{ bookedService.shop.name }} has been confirmed with payment via {{ paymentMethod }}.</p>
+        </div>
+      </mat-card>
+      <br><br>
+      <!-- Confirmation Message -->
+      <mat-card *ngIf="bookedService" class="confirmation-card">
+        <h3>Booked Service</h3>
+        <p>You have booked {{ bookedService.shop.name }} for {{ bookedService.service.name }} at {{
+          bookedService.shop.price }}</p>
+
+
+        <h4>
+          <pre>Select Payment Method</pre>
+        </h4>
+        <div class="payment-methods">
+          <button (click)="paymentMethod = 'UPI'; bookedService()" class="payment-button">UPI</button>
+          <button (click)="paymentMethod = 'PayPal'; bookedService()" class="payment-button">PayPal</button>
+          <button (click)="paymentMethod = 'Cash'; bookedService()" class="payment-button">Cash</button>
+          <button (click)="paymentMethod = 'Bank Transfer'; bookedService()" class="payment-button">Bank
+            Transfer</button>
+        </div>
+        <!-- Loading Spinner -->
+        <div *ngIf="isLoading" class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Processing payment...</p>
+        </div>
+      </mat-card>
+
+      <!-- Final Confirmation Message -->
+      <mat-card *ngIf="finalConfirmation" class="final-confirmation-card">
+        <h3>Booking Confirmed</h3>
+        <p>Your service {{ bookedService.service.name }} at {{ bookedService.shop.name }} has been confirmed with
+          payment via {{ paymentMethod }}.</p>
         'finalConfirmation()'
-        </mat-card>
-      
+      </mat-card>
 
-</div>
 
-<br><br><br>
-
-<div #section4>
-  <mat-card class="completed-card">
-    <br>
-    <h2><pre> Completed Services</pre></h2>
-
-    <div class="task-summary">
-    
-      <!-- Task 1 -->
-      <div class="task-card">
-        <img src="../../../assets/images/c1.jpg" alt="Car Service" />
-        <div class="task-details">
-          <h3>Car Service</h3>
-          <p>Description: High-quality car washing and polishing service.</p>
-          <p>Review: 
-            <span class="stars">★★★★★</span>
-          </p>
-          <p>Shop Name: 'Speedy Car Wash'</p>
-        </div>
-      </div>
-    
-      <!-- Task 2 -->
-      <div class="task-card">
-        <img src="../../../assets/images/c2.jpg" alt="Bike Service" />
-        <div class="task-details">
-          <h3>Bike Service</h3>
-          <p>Description: Quick and efficient bike servicing with doorstep pickup.</p>
-          <p>Review: 
-            <span class="stars">★★★★☆</span>
-          </p>
-          <p>Shop Name: 'Rapid Bike Care'</p>
-        </div>
-      </div>
-    
-      <!-- Task 3 -->
-      <div class="task-card">
-        <img src="../../../assets/images/c3.jpg" alt="Gardening" />
-        <div class="task-details">
-          <h3>Gardening</h3>
-          <p>Description: Professional gardening service for a beautiful backyard.</p>
-          <p>Review: 
-            <span class="stars">★★★★☆</span>
-          </p>
-          <p>Shop Name: 'Green Thumb Landscaping'</p>
-        </div>
-      </div>
     </div>
 
-    </mat-card>
+
+
+    <div #section4>
+      <mat-card class="completed-card">
+        <mat-card-header>
+          <mat-card-title>
+            <pre class="textBlueColor"> Completed Services</pre>
+          </mat-card-title><br>
+        </mat-card-header>
+        <!-- <h2>
+          <pre class="textBlueColor"> Completed Services</pre>
+        </h2> -->
+
+        <div class="task-summary">
+
+          <!-- Task 1 -->
+          <div class="task-card">
+            <img src="../../../assets/images/c1.jpg" alt="Car Service" />
+            <div class="task-details">
+              <h3>Car Service</h3>
+              <p>Description: High-quality car washing and polishing service.</p>
+              <p>Review:
+                <span class="stars">★★★★★</span>
+              </p>
+              <p>Shop Name: 'Speedy Car Wash'</p>
+            </div>
+          </div>
+
+          <!-- Task 2 -->
+          <div class="task-card">
+            <img src="../../../assets/images/c2.jpg" alt="Bike Service" />
+            <div class="task-details">
+              <h3>Bike Service</h3>
+              <p>Description: Quick and efficient bike servicing with doorstep pickup.</p>
+              <p>Review:
+                <span class="stars">★★★★☆</span>
+              </p>
+              <p>Shop Name: 'Rapid Bike Care'</p>
+            </div>
+          </div>
+
+          <!-- Task 3 -->
+          <div class="task-card">
+            <img src="../../../assets/images/c3.jpg" alt="Gardening" />
+            <div class="task-details">
+              <h3>Gardening</h3>
+              <p>Description: Professional gardening service for a beautiful backyard.</p>
+              <p>Review:
+                <span class="stars">★★★★☆</span>
+              </p>
+              <p>Shop Name: 'Green Thumb Landscaping'</p>
+            </div>
+          </div>
+        </div>
+
+      </mat-card>
     </div>
-    <br><br><br>
+
 
     <div #section5>
       <mat-card class="post-card">
-        <br>
-        <h2><pre> Post an Ads</pre></h2>
-        
+
+        <mat-card-header>
+          <mat-card-title>
+            <pre class="textBlueColor"> Post Ads</pre>
+          </mat-card-title><br>
+        </mat-card-header>
+        <!-- <h2>
+          <pre class="textBlueColor"> Post an Ads</pre>
+        </h2> -->
+
         <div class="card">
-          <h4><strong> <pre>Post Ad</pre></strong></h4>
-        
-          <!-- Service Selection -->
-          <label for="service">Choose a Service:</label>
-          <select [(ngModel)]="post.service" id="service">
-            <option *ngFor="let service of servicess" [value]="service">{{ service }}</option>
-          </select>
-        
-          <!-- File/Image Upload -->
-          <div>
-            <label for="image">Upload Image/File:</label>
-            <input type="file" id="image" (change)="onFileSelect($event)" />
+          <h4><strong>
+              <pre>Post Ad</pre>
+            </strong></h4>
+
+          <div class="row">
+            <!-- Service Selection -->
+            <div class="col-6">
+              <label for="service">Choose a Service:</label>
+              <select [(ngModel)]="post.service" id="service">
+                <option *ngFor="let service of servicess" [value]="service">{{ service }}</option>
+              </select>
+            </div>
+            <div class="col">
+              <!-- Expiry Selection -->
+              <label for="expiry">Ad Expiry:</label>
+              <select [(ngModel)]="post.expiry" id="expiry">
+                <option *ngFor="let time of expiryOptions" [value]="time">{{ time }}</option>
+              </select>
+            </div>
           </div>
-        
-          <!-- Address Input -->
-          <div>
-            <label for="address">Address:</label>
-            <input type="text" id="address" [(ngModel)]="post.address" placeholder="Enter address" />
+          <div class="row">
+            <!-- File/Image Upload -->
+            <div class="col-6">
+              <label for="image">Upload Image/File:</label>
+              <input type="file" id="image" (change)="onFileSelect($event)" />
+            </div>
+            <!-- Address Input -->
+            <div class="col">
+              <label for="address">Address:</label>
+              <input type="text" id="address" [(ngModel)]="post.address" placeholder="Enter address" />
+            </div>
           </div>
-        
           <!-- Description -->
           <div>
             <label for="description">Description:</label>
             <textarea id="description" [(ngModel)]="post.description" placeholder="Enter job description"></textarea>
           </div>
-        
-          <!-- Expiry Selection -->
-          <label for="expiry">Ad Expiry:</label>
-          <select [(ngModel)]="post.expiry" id="expiry">
-            <option *ngFor="let time of expiryOptions" [value]="time" >{{ time }}</option>
-          </select>
-        
+
+
+
           <!-- Post Ad Button -->
           <button (click)="postAd()">Post Ad</button>
-        
+
           <!-- Success Message -->
           <p *ngIf="successMessage">{{ successMessage }}</p>
         </div>
@@ -242,94 +342,122 @@
       </mat-card>
     </div>
 
-<br><br><br>
+
     <div #section6>
       <mat-card class="active-card">
-        <br>
-        <h2><pre> Active Ads</pre></h2>
+        <mat-card-header>
+          <mat-card-title>
+
+            <pre class="textBlueColor"> Active Ads</pre>
+
+          </mat-card-title><br>
+        </mat-card-header>
+        <!-- <h2>
+          <pre class="textBlueColor"> Active Ads</pre>
+        </h2> -->
         <div class="ad-card">
           <div class="ad-header">
-              <img src="../../../assets/images/a1.jpg" alt="Service Image" class="ad-image">
-              <div class="ad-info">
-                  <h4>Ad-1</h4>
-                  <p class="ad-type">Bike Wash</p>
-                  <p class="ad-days-left">Expires in 15 days</p>
-              </div>
+            <img src="../../../assets/images/a1.jpg" alt="Service Image" class="ad-image">
+            <div class="ad-info">
+              <h4>Ad-1</h4>
+              <p class="ad-type">Bike Wash</p>
+              <p class="ad-days-left">Expires in 15 days</p>
+            </div>
           </div>
           <div class="ad-description">
-              <h4>Address</h4>
-              <p>Opp Reliance super mart,Kd road, Mysore, India</p>
+            <h4>Address</h4>
+            <p>Opp Reliance super mart,Kd road, Mysore, India</p>
           </div>
           <div class="ad-footer">
-              <p>Thorough cleaning and maintenance for all bike types, using eco-friendly products to remove grime and ensure optimal performance.</p>
-          </div><br><hr>
+            <p>Thorough cleaning and maintenance for all bike types, using eco-friendly products to remove grime and
+              ensure optimal performance.</p>
+          </div><br>
+          <hr>
 
-          
 
-        <div class="ad-header">
-          <img src="../../../assets/images/a3.jpg" alt="Service Image" class="ad-image">
-          <div class="ad-info">
+
+          <div class="ad-header">
+            <img src="../../../assets/images/a3.jpg" alt="Service Image" class="ad-image">
+            <div class="ad-info">
               <h4>Ad-3</h4>
               <p class="ad-type">Aquarium Wash</p>
               <p class="ad-days-left">Expires in 2 days</p>
+            </div>
           </div>
-      </div>
-      <div class="ad-description">
-          <h4>Address</h4>
-          <p>Vijaynagara 4th stage, Mysore, India</p>
-      </div>
-      <div class="ad-footer">
-          <p>Expert cleaning and maintenance for your aquarium, ensuring a healthy aquatic environment with tailored care for both freshwater and saltwater tanks.</p>
-      </div>
+          <div class="ad-description">
+            <h4>Address</h4>
+            <p>Vijaynagara 4th stage, Mysore, India</p>
+          </div>
+          <div class="ad-footer">
+            <p>Expert cleaning and maintenance for your aquarium, ensuring a healthy aquatic environment with tailored
+              care for both freshwater and saltwater tanks.</p>
+          </div>
 
-      </div>
-       <br>
+        </div>
+        <br>
       </mat-card>
     </div>
-
-    <br><br><br>
 
     <div #section7>
       <mat-card class="ex-card">
-        <br>
-        <h2><pre> Expired Ads</pre></h2>
+        <mat-card-header>
+          <mat-card-title>
 
-      <div class="ad-row">
+            <pre class="textBlueColor"> Expired Ads</pre>
+
+          </mat-card-title><br>
+        </mat-card-header>
+        <!-- <h2>
+          <pre class="textBlueColor"> Expired Ads</pre>
+        </h2> -->
+
+        <div class="ad-row">
           <div class="ad-card1">
-              <div class="ad-header">
-                  <img src="../../../assets/images/d1.jpg" alt="Bike Image" class="ad-image">
-                  <div class="expired-ad-info">
-                      <h2>Bike Shine</h2>
-                      <p class="expired-ad-status">Expired 3 days ago</p>
-                      <p class="expired-ad-description">Give my bike the shine it deserves! scrubs, polish it .</p>
-                  </div>
-              </div>
-          </div>
-      
-          <div class="ad-card1">
-              <div class="ad-header">
-                  <img src="../../../assets/images/d2.jpg" alt="Expired Aquarium Image" class="expired-ad-image">
-                  <div class="expired-ad-info">
-                      <h2>Aquarium Care</h2>
-                      <p class="expired-ad-status">Expired 12 days ago</p>
-                      <p class="expired-ad-description">Dive into crystal-clear waters with our expert aquarium care. 
-              </div>
-          </div>
-      </div>
-      </div>
-      
-      <div class="ad-row">
-          <div class="ad-card1">
-              <div class="expired-ad-header">
-                  <img src="../../../assets/images/d3.jpg" alt="Expired Tank Image" class="expired-ad-image">
-                  <div class="expired-ad-info">
-                      <h2>Tank TLC</h2>
-                      <p class="expired-ad-status">Expired 1 month ago</p>
-                      <p class="expired-ad-description"> Clean, inspect, and repair tank well in 4 hrs.</p>
-                  </div>
+            <div class="ad-header">
+              <img src="../../../assets/images/d1.jpg" alt="Bike Image" class="ad-image">
+              <div class="expired-ad-info">
+                <h2>Bike Shine</h2>
+                <p class="expired-ad-status">Expired 3 days ago</p>
+                <p class="expired-ad-description">Give my bike the shine it deserves! scrubs, polish it .</p>
               </div>
             </div>
-      </div>
+          </div>
+
+          <div class="ad-card1">
+            <div class="ad-header">
+              <img src="../../../assets/images/d2.jpg" alt="Expired Aquarium Image" class="expired-ad-image">
+              <div class="expired-ad-info">
+                <h2>Aquarium Care</h2>
+                <p class="expired-ad-status">Expired 12 days ago</p>
+                <p class="expired-ad-description">Dive into crystal-clear waters with our expert aquarium care.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ad-row">
+          <div class="ad-card1">
+            <div class="expired-ad-header">
+              <img src="../../../assets/images/d3.jpg" alt="Expired Tank Image" class="expired-ad-image">
+              <div class="expired-ad-info">
+                <h2>Tank TLC</h2>
+                <p class="expired-ad-status">Expired 1 month ago</p>
+                <p class="expired-ad-description"> Clean, inspect, and repair tank well in 4 hrs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ad-card1">
+            <div class="expired-ad-header">
+              <img src="../../../assets/images/d3.jpg" alt="Expired Tank Image" class="expired-ad-image">
+              <div class="expired-ad-info">
+                <h2>Tank TLC</h2>
+                <p class="expired-ad-status">Expired 1 month ago</p>
+                <p class="expired-ad-description"> Clean, inspect, and repair tank well in 4 hrs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </mat-card>
     </div>
-    </div>
+  </div>
+</div>

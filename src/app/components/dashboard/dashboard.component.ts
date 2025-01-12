@@ -4,25 +4,31 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   standalone: false,
-  
+
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+  displaySideBar = true;
+  editUserForm = false;
 
-
-  constructor(private router:Router) {}
-  
-    scrollTo(sectionId: HTMLElement): void {
-     
-      sectionId.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly
-   
-    }
-
-  
-
-    
-
+  servicess = ['Car Service', 'Bike Service', 'Pet Grooming', 'Gardening', 'Sofa Cleaning'];
+  expiryOptions = ['30 Minutes', '1 Hour', '2 Hours'];
+  post = {
+    service: '',
+    address: '',
+    description: '',
+    expiry: '',
+    file: null
+  };
+  user={ name:'Test Customer Name',
+    phone:'+91 34344444',
+    email:'test@gmail.com',
+    address:'Mysore, Karnataka',
+    pin:'343-433',
+    age:34,
+    dob:new Date()};
+  successMessage = '';
 
   temperatures = [
     { name: 'Temperatura Sala', value: 20.7, trend: 80 },
@@ -109,14 +115,22 @@ export class DashboardComponent {
       ]
     }
   ];
-
-  
-
   selectedService: any = null;
   bookedService: any = null;
-  paymentMethod: string='';
+  paymentMethod: string = '';
   finalConfirmation: boolean = false;
   isLoading: boolean = false;
+
+
+  constructor(private router: Router) { 
+  }
+
+  scrollTo(sectionId: HTMLElement): void {
+
+    sectionId.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly
+
+  }
+
 
   selectService(service: any) {
     this.selectedService = service;
@@ -139,23 +153,11 @@ export class DashboardComponent {
     this.paymentMethod = method;
     this.isLoading = true;
     setTimeout(() => {
-      this.isLoading=false;
+      this.isLoading = false;
       this.finalConfirmation = true;
       this.finalConfirmation = true;
-    },200);
+    }, 200);
   }
-
-  
-servicess = ['Car Service', 'Bike Service', 'Pet Grooming', 'Gardening', 'Sofa Cleaning'];
-  expiryOptions = ['30 Minutes', '1 Hour', '2 Hours'];
-  post = {
-    service: '',
-    address: '',
-    description: '',
-    expiry: '',
-    file: null
-  };
-  successMessage = '';
 
   onFileSelect(event: any) {
     const file = event.target.files[0];
@@ -178,5 +180,13 @@ servicess = ['Car Service', 'Bike Service', 'Pet Grooming', 'Gardening', 'Sofa C
       this.successMessage = 'Please fill out all fields!';
     }
   }
+  navigateToHome() {
+    location.href = '#';
+  }
+  editUser() {
+    this.editUserForm = true;
+  }
+  updateUser() {
+    this.editUserForm = false;
+  }
 }
-

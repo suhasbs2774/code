@@ -5,13 +5,37 @@ body {
 }
 
 .sidebar {
-  background-color: #0000006e;
-  color: rgb(0, 0, 0);
-  width: 250px;
+  background-color: #fefefe;
+  color: #005cbb;
+  width: fit-content;
   height: 100vh;
   padding: 20px;
   position: fixed;
-  
+  display: flex;
+  gap:10px;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  h3{
+    font-family: 'Roboto',sans-serif;
+  }
+  .menuHeader{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    display: flex;
+  }
+  .leftOpen{
+    width: 12px;
+    display: flex;
+    color: #005cbb;
+    flex-direction: column;
+    background-color: inherit;
+  }
+  .leftOpen:hover{
+    background-color: #00509e; 
+    color: #f1efea; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  }
 }
 
 .sidebar a {
@@ -32,15 +56,16 @@ body {
 }
 
 .main-content {
-  margin-left: 250px;
+  
   padding: 20px;
-  margin-right: 500px;
-  align-items: flex-start;
+  flex-direction: column;
+  display: flex;
+  gap: 15px;
   
 }
 
 .dash {
-  background-color: #91c1e634; 
+  background-color: #dbe4eb34; 
   height: 100%;
   background-repeat: repeat;
   background-size: 100%;
@@ -51,10 +76,9 @@ body {
 
 /* General Styles */
 .hover-card {
-
   border-radius: 10px;
-  background: #b7c8c9;
-  box-shadow: 4px;
+  background: #dcdfe334;
+  box-shadow: 4px 4px 4px #c1c1c3;
   gap: 15px;
 }
 
@@ -67,7 +91,7 @@ body {
   align-items: center;
   align-self: start;
   gap: 5px;
-  width: 50%;
+  width: 100%;
   color:#333333;
 }
 
@@ -76,6 +100,7 @@ body {
   border: 2px solid #ccc;
   display: flex;
   flex-direction: column;
+  width: 20%;
 }
 
 /* Recent Payments Styles */
@@ -84,9 +109,12 @@ body {
   flex-direction: row;
   gap: 10px;
   align-self: start;
+  justify-content: space-evenly;
 
 }
-
+.paymentSubtitle{
+  display: flex;
+}
 .payment-item {
   display: flex;
   align-items: center;
@@ -121,12 +149,21 @@ body {
 
 
 /* Card Styles */
-.service-card, .shop-card, .confirmation-card {
+.service-card {
   width: 100%;
-  max-width: 800px;
+  /* max-width: 800px; */
+  padding: 0px 20px 20px 0px;
+  background: #dcdfe334;
+  box-shadow: 4px 4px 4px #c1c1c3;
+  border-radius: 10px;
+  text-align: center;
+}
+.shop-card, .confirmation-card {
+  width: 100%;
+  /* max-width: 800px; */
   padding: 20px;
-  background: #b7c8c9;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #dcdfe334;
+  box-shadow: 4px 4px 4px #c1c1c3;
   border-radius: 10px;
   text-align: center;
 }
@@ -266,8 +303,8 @@ button {
   transition: all 0.3s ease;
 
   &:hover {
-    background: #00509e; 
-    color: #ffc300; 
+    background-color: #00509e; 
+    color: #f1efea; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
   }
 
@@ -285,7 +322,7 @@ button {
 
 .task-summary {
   max-width: 800px;
-  margin: 20px auto;
+  margin: 0px auto;
 }
 
 .task-summary h2 {
@@ -300,7 +337,9 @@ button {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  /* background: linear-gradient(135deg, #f8f9fa, #e9ecef); */
+  
+  background-color: #fbfbfb;
 }
 
 .task-card img {
@@ -330,16 +369,17 @@ button {
 
 .completed-card{
   border-radius: 10px;
-  background: #b7c8c9;
-  box-shadow: 4px;
+  background: #dcdfe334;
+  box-shadow: 4px 4px 4px #c1c1c3;
   gap: 15px;
   width: 100%;
 }
 
 
 .card {
-  max-width: 400px;
+  /* max-width: 400px; */
   margin: auto;
+  width: 90%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -366,13 +406,14 @@ button {
 }
 
 .card button {
-  width: 100%;
+  width: fit-content;
   padding: 10px;
   background-color: #28a745;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin: auto;
 }
 
 .card button:hover {
@@ -388,8 +429,8 @@ button {
 
 .post-card{
   border-radius: 10px;
-  background: #b7c8c9;
-  box-shadow: 4px;
+  background: #dcdfe334;
+  box-shadow: 4px 4px 4px #c1c1c3;
   gap: 15px;
   width: 100%;
 }
@@ -400,12 +441,12 @@ button {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  margin: 15px;
+  margin:0px 15px;
   width: 300px;
   font-family: 'Arial', sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  background-color: rgb(184, 217, 180);
+  background-color: #fbfbfb;
   display: flex;
   flex-direction: column;
 }
@@ -447,8 +488,8 @@ button {
 
 .active-card {
   border-radius: 10px;
-  background: #84e668;
-  box-shadow: 4px;
+  background: #dcdfe334;
+  box-shadow: 4px 4px 4px #c1c1c3;
   gap: 15px;
   width: 100%; 
 }
@@ -457,7 +498,7 @@ button {
 
 .ad-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-bottom: 20px;
 }
 
@@ -469,7 +510,7 @@ button {
   margin-left: 15px;
   margin-right: 15px;
   font-family: 'Arial', sans-serif;
-  background-color: #b97c7c;
+  background-color: #f4f5f7;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
 }
@@ -532,8 +573,53 @@ button {
 
 .ex-card {
   border-radius: 10px;
-  background: #e66868;
-  box-shadow: 4px;
+  background: #dcdfe334;
+  box-shadow: 4px 4px 4px #c1c1c3;
   gap: 15px;
   width: 100%; 
+}
+.textBlueColor{
+  color: #005cbb;
+  font-family: 'roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.45rem;
+  text-transform: uppercase;
+}
+.editProfile{
+  cursor: pointer;
+}
+
+
+.user-profile label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.user-profile input,
+.user-profile select,
+.user-profile textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-profile button {
+  width: fit-content;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.user-profile button:hover {
+  background-color: #218838;
+}
+
+.user-details{
+  width: 80%;
 }
