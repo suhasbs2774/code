@@ -1,0 +1,44 @@
+.containerText{
+    height: 100vh;
+    background-repeat: repeat-x;
+    background-size: 100%;
+    display: flex;
+    
+    
+    .section{
+      background-color: #fff;
+      box-shadow: 5px 4px 6px 8px rgba(0, 0, 0, 0.1);
+      height: 80%;
+      width: 80%;
+      margin: auto;
+      border-radius: 4px;
+      display: flex;
+      flex-direction:row;
+      gap: 20px;
+      justify-content: space-evenly;
+      align-items: center;
+      .col{
+        padding:10px;
+        .form{
+          padding: 5px 5px 5px 15px;
+        }
+        form{
+          font-size: .875rem !important;
+          box-shadow: 5px 4px 6px 8px rgba(0, 0, 0, 0.1);
+          .btn{
+            font-size: .875rem !important;
+          }
+          .btn-link{
+            padding-left: 0px !important;
+          }
+        }
+      }
+    }
+   
+  
+    .carousel-item{
+      img{
+       border-radius: 5px;
+      }
+     }
+  }

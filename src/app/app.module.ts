@@ -17,13 +17,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { FormsModule} from '@angular/forms'
+import { FormsModule} from '@angular/forms';
+import { RegComponent } from './reg/reg.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    RegComponent
+   
   ],
   imports: [
     BrowserModule,
