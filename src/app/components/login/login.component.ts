@@ -19,5 +19,8 @@ export class LoginComponent {
  gotoReg() {
   this.router.navigate(['/reg']);
  }
+ gotoVendor() {
+  this.router.navigate(['/vendor']);
+ }
 
 }

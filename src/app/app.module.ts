@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule} from '@angular/forms';
 import { RegComponent } from './reg/reg.component';
+import { VendorComponent } from './vendor/vendor.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RegComponent } from './reg/reg.component';
     LoginComponent,
     DashboardComponent,
     HomeComponent,
-    RegComponent
+    RegComponent,
+    VendorComponent
    
   ],
   imports: [

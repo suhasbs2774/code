@@ -16,4 +16,7 @@ email='';
  gotoDashboard() {
   this.router.navigate(['/dashboard']);  // define your component where you want to go
  }
+ gotoVendor() {
+  this.router.navigate(['/vendor']);  // define your component where you want to go
+ }
 }
