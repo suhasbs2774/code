@@ -624,3 +624,29 @@ button {
 .user-details{
   width: 80%;
 }
+
+.custom-datepicker {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Change the border and background color when focused */
+.custom-datepicker:focus {
+  outline: none;
+  border-color: #2196F3;
+  background-color: #e3f2fd;
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+}
+
+/* Add hover effects */
+.custom-datepicker:hover {
+  background-color: #f1f1f1;
+}

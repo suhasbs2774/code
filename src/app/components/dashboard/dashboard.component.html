@@ -184,20 +184,26 @@
 
       <!-- List of Shops for Selected Service -->
       <mat-card *ngIf="selectedService" class="shop-card">
+        <div>
+          <h3>Select a Date for the Service</h3>
+          <input type="date" id="serviceDate" name="serviceDate" class="custom-datepicker">
+        </div><br>
         <h3>Select a Shop for {{ selectedService.name }}</h3>
         <div class="shop-boxes">
+          
           <div *ngFor="let shop of selectedService.shops" class="shop-box" (click)="bookService(shop)">
             <p>{{ shop.name }}</p>
             <p class="price">{{ shop.price }}</p>
           </div>
         </div>
+        
       </mat-card>
       <br><br>
       <!-- Confirmation Message -->
       <mat-card *ngIf="bookedService" class="confirmation-card">
         <h3>Booked Service</h3>
         <p>You have booked {{ bookedService.shop.name }} for {{ bookedService.service.name }} at {{
-          bookedService.shop.price }}</p>
+          bookedService.shop.price }} on selected date.</p>
 
 
         <h4>
@@ -243,11 +249,12 @@
             <img src="../../../assets/images/c1.jpg" alt="Car Service" />
             <div class="task-details">
               <h3>Car Service</h3>
-              <p>Description: High-quality car washing and polishing service.</p>
-              <p>Review:
+              <p><strong>Description:</strong> High-quality car washing and polishing service.</p>
+              <p><strong>Review:</strong>
                 <span class="stars">★★★★★</span>
               </p>
-              <p>Shop Name: 'Speedy Car Wash'</p>
+              <p><strong>Shop Name:</strong> 'Speedy Car Wash'</p>
+              <p><strong>Date of Service:</strong> 12/10/24</p>
             </div>
           </div>
 
@@ -256,11 +263,12 @@
             <img src="../../../assets/images/c2.jpg" alt="Bike Service" />
             <div class="task-details">
               <h3>Bike Service</h3>
-              <p>Description: Quick and efficient bike servicing with doorstep pickup.</p>
-              <p>Review:
+              <p><strong>Description:</strong> Quick and efficient bike servicing with doorstep pickup.</p>
+              <p><strong>Review:</strong>
                 <span class="stars">★★★★☆</span>
               </p>
-              <p>Shop Name: 'Rapid Bike Care'</p>
+              <p><strong>Shop Name:</strong> 'Rapid Bike Care'</p>
+              <p><strong>Date of Service:</strong> 26/12/24</p>
             </div>
           </div>
 
@@ -269,11 +277,12 @@
             <img src="../../../assets/images/c3.jpg" alt="Gardening" />
             <div class="task-details">
               <h3>Gardening</h3>
-              <p>Description: Professional gardening service for a beautiful backyard.</p>
-              <p>Review:
+              <p><strong>Description:</strong> Professional gardening service for a beautiful backyard.</p>
+              <p><strong>Review:</strong>
                 <span class="stars">★★★★☆</span>
               </p>
-              <p>Shop Name: 'Green Thumb Landscaping'</p>
+              <p><strong>Shop Name:</strong> 'Green Thumb Landscaping'</p>
+              <p><strong>Date of Service:</strong> 5/1/25</p>
             </div>
           </div>
         </div>

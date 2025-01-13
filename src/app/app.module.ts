@@ -34,6 +34,7 @@ import { VendorComponent } from './vendor/vendor.component';
   imports: [
     BrowserModule,
     FormsModule,
+  
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
@@ -46,10 +47,13 @@ import { VendorComponent } from './vendor/vendor.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatToolbarModule,
-    MatGridListModule
+    MatGridListModule,
+
   ],
   providers: [
-    provideAnimationsAsync()
+    
+    provideAnimationsAsync(),
+
   ],
   bootstrap: [AppComponent]
 })
