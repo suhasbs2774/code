@@ -183,10 +183,14 @@ export class DashboardComponent {
   navigateToHome() {
     location.href = '#';
   }
+  navigateToLogin(){
+    this.router.navigate(['/login']);  // define your component where you want to go
+  }
   editUser() {
     this.editUserForm = true;
   }
   updateUser() {
     this.editUserForm = false;
   }
+
 }

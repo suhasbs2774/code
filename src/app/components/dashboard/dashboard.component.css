@@ -29,6 +29,7 @@ body {
     display: flex;
     color: #005cbb;
     flex-direction: column;
+    
     background-color: inherit;
   }
   .leftOpen:hover{
