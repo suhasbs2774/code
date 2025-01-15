@@ -253,9 +253,25 @@
             <div class="task-details">
               <h3>Car Service</h3>
               <p><strong>Description:</strong> High-quality car washing and polishing service.</p>
-              <p><strong>Review:</strong>
-                <span class="stars">★★★★★</span>
-              </p>
+              <p><strong>Review:</strong></p>
+               
+                <div class="star-rating">
+                  <span
+                    *ngFor="let star of stars; let i = index"
+                    [class.active]="i < rating"
+                    (click)="rate(i + 1)"
+                    (mouseover)="hover(i + 1)"
+                    (mouseleave)="hover(0)"
+                  >
+                    ★
+                  </span>
+                </div>
+                <p>Your rating: {{ rating }}</p>
+                
+                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview()">Submit Review</button>
+                <p *ngIf="message">{{ message }}</p>
+
+            
               <p><strong>Shop Name:</strong> 'Speedy Car Wash'</p>
               <p><strong>Date of Service:</strong> 12/10/24</p>
             </div>
@@ -267,9 +283,24 @@
             <div class="task-details">
               <h3>Bike Service</h3>
               <p><strong>Description:</strong> Quick and efficient bike servicing with doorstep pickup.</p>
-              <p><strong>Review:</strong>
-                <span class="stars">★★★★☆</span>
-              </p>
+              <p><strong>Review:</strong></p>
+                <div class="star-rating">
+                  <span
+                    *ngFor="let star of stars; let i = index"
+                    [class.active]="i < rating"
+                    (click)="rate(i + 1)"
+                    (mouseover)="hover(i + 1)"
+                    (mouseleave)="hover(0)"
+                  >
+                    ★
+                  </span>
+                </div>
+                <p>Your rating: {{ rating }}</p>
+                
+                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview()">Submit Review</button>
+                <p *ngIf="message">{{ message }}</p>
+
+            
               <p><strong>Shop Name:</strong> 'Rapid Bike Care'</p>
               <p><strong>Date of Service:</strong> 26/12/24</p>
             </div>
@@ -281,9 +312,24 @@
             <div class="task-details">
               <h3>Gardening</h3>
               <p><strong>Description:</strong> Professional gardening service for a beautiful backyard.</p>
-              <p><strong>Review:</strong>
-                <span class="stars">★★★★☆</span>
-              </p>
+              <p><strong>Review:</strong></p>
+                <div class="star-rating">
+                  <span
+                    *ngFor="let star of stars; let i = index"
+                    [class.active]="i < rating"
+                    (click)="rate(i + 1)"
+                    (mouseover)="hover(i + 1)"
+                    (mouseleave)="hover(0)"
+                  >
+                    ★
+                  </span>
+                </div>
+                <p>Your rating: {{ rating }}</p>
+                
+                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview()">Submit Review</button>
+                <p *ngIf="message">{{ message }}</p>
+
+            
               <p><strong>Shop Name:</strong> 'Green Thumb Landscaping'</p>
               <p><strong>Date of Service:</strong> 5/1/25</p>
             </div>

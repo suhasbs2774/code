@@ -651,3 +651,23 @@ button {
 .custom-datepicker:hover {
   background-color: #f1f1f1;
 }
+
+
+.star-rating {
+  display: flex;
+  cursor: pointer;
+}
+
+.star-rating span {
+  font-size: 2rem;
+  color: lightgray;
+  transition: color 0.2s;
+}
+
+.star-rating span.active {
+  color: gold; /* Highlight selected stars */
+}
+
+.star-rating span:hover {
+  color: gold; /* Highlight hovered stars */
+}

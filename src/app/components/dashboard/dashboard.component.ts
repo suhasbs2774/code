@@ -120,6 +120,29 @@ export class DashboardComponent {
   paymentMethod: string = '';
   finalConfirmation: boolean = false;
   isLoading: boolean = false;
+  rating: number = 0;
+  stars: number[] = Array(5).fill(0);
+  message: string = '';
+
+  rate(value: number): void {
+    this.rating = value;
+  }
+
+  // Highlight stars on hover
+  hover(value: number): void {
+    this.rating = value ? value - 1 : this.rating;
+  }
+
+  // Handle review submission
+  submitReview(): void {
+    if (this.rating === 0) {
+      this.message = 'Please select a rating before submitting.';
+    } else {
+      // Save the review locally
+      localStorage.setItem('userRating', this.rating.toString());
+      this.message = 'Thank you for rating us !';
+    }
+  }
 
 
   constructor(private router: Router) { 
