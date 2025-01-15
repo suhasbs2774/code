@@ -20,6 +20,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule} from '@angular/forms';
 import { RegComponent } from './reg/reg.component';
 import { VendorComponent } from './vendor/vendor.component';
+import { Card2Component } from './card2/card2.component';
+import { Card3Component } from './card3/card3.component';
+import { Card1Component } from './card1/card1.component';
+import { Card4Component } from './card4/card4.component';
+import { Card5Component } from './card5/card5.component';
+import { Card6Component } from './card6/card6.component';
+import { Card7Component } from './card7/card7.component';
+import { Card8Component } from './card8/card8.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,15 @@ import { VendorComponent } from './vendor/vendor.component';
     DashboardComponent,
     HomeComponent,
     RegComponent,
-    VendorComponent
+    VendorComponent,
+    Card2Component,
+    Card3Component,
+    Card1Component,
+    Card4Component,
+    Card5Component,
+    Card6Component,
+    Card7Component,
+    Card8Component
    
   ],
   imports: [

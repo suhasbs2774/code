@@ -10,42 +10,42 @@
     
     
 
-    <button (click)="navigateToHome()" class="mat-button-sm" mat-button>
+    <button (click)="gotoCard7()" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">HOME</span>
       <mat-icon>home</mat-icon></button>
 
-      <button (click)="scrollTo(section2)" class="mat-button-sm" mat-button>
+      <button (click)="gotoCard1()" class="mat-button-sm" mat-button>
         <span *ngIf="displaySideBar">User Profile</span>
         <mat-icon>person</mat-icon>
       </button>
 
-      <button (click)="scrollTo(section3)" class="mat-button-sm" mat-button>
+      <button (click)="gotoCard8()" class="mat-button-sm" mat-button>
         <span *ngIf="displaySideBar">Recent Payments</span>
         <mat-icon>payments</mat-icon>
       </button>
 
     
-    <button (click)="scrollTo(section1)" class="mat-button-sm" mat-button>
+    <button (click)="gotoCard2()" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">Search for Wash</span>
       <mat-icon>search</mat-icon>
     </button>
-    <button (click)="scrollTo(section4)" class="mat-button-sm" mat-button>
+    <button (click)="gotoCard3()" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">Completed Services</span>
       <mat-icon>checklist</mat-icon>
     </button>
     
     
-    <button (click)="scrollTo(section5)" class="mat-button-sm" mat-button>
+    <button (click)="gotoCard4()" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">Post and Ad</span>
       <mat-icon>post_add</mat-icon>
     </button>
 
-    <button (click)="scrollTo(section6)" class="mat-button-sm" mat-button>
+    <button (click)="gotoCard5()" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">Active Ads</span>
       <mat-icon>check_circle</mat-icon>
     </button>
 
-    <button (click)="scrollTo(section7)" class="mat-button-sm" mat-button>
+    <button (click)="gotoCard6()" class="mat-button-sm" mat-button>
       <span *ngIf="displaySideBar">Expired Ads</span>
       <mat-icon>cancel</mat-icon>
     </button>
@@ -57,520 +57,86 @@
 
   <div class="main-content" [style.margin-left]="displaySideBar?'270px':'140px'">
 
-    <!-- Card 1 with User Details -->
-    <div #section2>
-      <mat-card class="hover-card">
-        <mat-card-header>
-          <mat-card-title>
-            <pre class="textBlueColor">User Profile    <mat-icon class="editProfile" (click)="editUser()" color="primary">edit</mat-icon></pre>
-          
-            
-          </mat-card-title>
-          <br>
-        </mat-card-header>
-        <mat-card-content>
-          
-          <div class="user-profile">
-            <br>
-            <img class="user-image" src="../../../assets/images/dp2.jpg" alt="User Image" width="35%" />
-            <br>
-            <div class="user-details" *ngIf="!editUserForm">
-              <p><strong>User-name: </strong> {{user.name}}</p>
-              <p><strong>Age:</strong> {{user.age}}</p>
-              <p><strong>DOB:</strong> {{user.dob | date: 'dd/MM/yyyy' }}</p>
-              <p><strong>Email:</strong> {{user.email}}</p>
-              <p><strong>Location:</strong>{{user.address}}</p>
-              <p><strong>Pin-code:</strong> {{user.pin}}</p>
-              <p><strong>Conact no:</strong>{{user.phone}}</p>
-            </div>
-            <div *ngIf="editUserForm" class="user-details" >
-            <form>
-              <div class="row">
-                <div class="col-5">
-                  <label for="name">User Name</label>
-                  <input [(ngModel)]="user.name" type="text" [ngModelOptions]="{standalone: true}" id="name">
-                </div>
-                <div class="col-5">
-                  <label for="age">Age</label>
-                  <input type="number" [(ngModel)]="user.age"  [ngModelOptions]="{standalone: true}" id="age">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-5">
-                  <label for="dob">Date Of Birth</label>
-                  <input id="dob" [(ngModel)]="user.dob"  [ngModelOptions]="{standalone: true}" type="date">
-                </div>
-                <div class="col-5">
-                  <label for="pin">Pin-Code</label>
-                  <input id="pin" [(ngModel)]="user.pin"  [ngModelOptions]="{standalone: true}" type="text">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-10">
-                  <label for="location">location</label>
-                  <textarea id="location" [(ngModel)]="user.address"  [ngModelOptions]="{standalone: true}"></textarea>
-                </div>
-                
-              </div>
-              <div class="row">
-                <div class="col-5">
-                  <label for="email">Email Address</label>
-                  <input id="email" [(ngModel)]="user.email"  [ngModelOptions]="{standalone: true}" type="email">
-                </div>
-                <div class="col-5">
-                  <label for="phone">Contact Number</label>
-                  <input id="phone" [(ngModel)]="user.phone"  [ngModelOptions]="{standalone: true}" type="tel">
-                </div>
-              </div>
-              <div style="width:100%">
-                <button style="margin:auto; width:fit-content;" type="submit" (click)="updateUser()">Update</button>
-              </div>
-            </form>
+    <div class="dashboard-container">
+      <!-- Notifications Card -->
+      <div class="card">
+        <h3>Notifications</h3>
+        <div class="notifications-container">
+          <div class="notification">
+            <span class="notification-icon" style="background-color: #ff6b6b;">🔔</span>
+            <div class="notification-text">
+              <strong>Vendor Accepted:</strong> Your ad for Car Service has been approved.
+              <p class="notification-time">5 mins ago</p>
             </div>
           </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-    <!-- Card 2 with Recent Payments -->
-    <div #section3>
-      <mat-card class="hover-card">
-        <mat-card-header>
-          <mat-card-title>
-            <pre class="textBlueColor">Recent Payments</pre>
-          </mat-card-title><br>
-          <br>
-          <mat-card-subtitle class="paymentSubtitle"><mat-icon>history</mat-icon>Last 5
-            Transactions</mat-card-subtitle><br>
-        </mat-card-header>
-        <mat-card-content>
-          <br>
-          <div class="recent-payments">
-            <!-- Static Payments List using ngFor -->
-            <div class="payment-item" *ngFor="let payment of [
-              { image: '../../../assets/images/p1.jpg', title: 'UPI Transfer', date: 'Jan 5, 2025', amount: '500 rs' },
-              { image: '../../../assets/images/p2.jpg', title: 'PayPal Invoice', date: 'Jan 3, 2025', amount: '300 rs' },
-              { image: '../../../assets/images/p3.jpg', title:  'Bank Transfer', date: 'Jan 2, 2025', amount: '450 rs' },
-              { image: '../../../assets/images/p4.jpg', title: 'Cash Deposit', date: 'Jan 1, 2025', amount: '750 rs' }
-            ]">
-              <img class="payment-icon" [src]="payment.image" alt="{{ payment.title }}" />
-              <div class="payment-details">
-                <p><strong>{{ payment.title }}</strong></p>
-                <p>{{ payment.date }}</p>
-              </div>
-              <p class="payment-amount">{{ payment.amount }}</p>
-            </div>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-
-
-    <div #section1>
-      <mat-card class="service-card">
-        <mat-card-header>
-          <mat-card-title>
-            <pre class="textBlueColor">Select a Service</pre>
-          </mat-card-title><br>
-        </mat-card-header>
-        <!-- <h2>
-          <pre class="textBlueColor">Select a Service</pre>
-        </h2> -->
-        <div class="service-boxes">
-          <div *ngFor="let service of services" class="service-box" (click)="selectService(service)">
-            <img [src]="service.image" alt="{{ service.name }}">
-            <p>{{ service.name }}</p>
-          </div>
-        </div>
-      </mat-card>
-
-      <!-- List of Shops for Selected Service -->
-      <mat-card *ngIf="selectedService" class="shop-card">
-        <div>
-          <h3>Select a Date for the Service</h3>
-          <input type="date" id="serviceDate" name="serviceDate" class="custom-datepicker">
-        </div><br>
-        <h3>Select a Shop for {{ selectedService.name }}</h3>
-        <div class="shop-boxes">
-          
-          <div *ngFor="let shop of selectedService.shops" class="shop-box" (click)="bookService(shop)">
-            <p>{{ shop.name }}</p>
-            <p class="price">{{ shop.price }}</p>
-          </div>
-        </div>
-        
-      </mat-card>
-      <br><br>
-      <!-- Confirmation Message -->
-      <mat-card *ngIf="bookedService" class="confirmation-card">
-        <h3>Booked Service</h3>
-        <p>You have booked {{ bookedService.shop.name }} for {{ bookedService.service.name }} at {{
-          bookedService.shop.price }} on selected date.</p>
-
-
-        <h4>
-          <pre>Select Payment Method</pre>
-        </h4>
-        <div class="payment-methods">
-          <button (click)="paymentMethod = 'UPI'; bookedService()" class="payment-button">UPI</button>
-          <button (click)="paymentMethod = 'PayPal'; bookedService()" class="payment-button">PayPal</button>
-          <button (click)="paymentMethod = 'Cash'; bookedService()" class="payment-button">Cash</button>
-          <button (click)="paymentMethod = 'Bank Transfer'; bookedService()" class="payment-button">Bank
-            Transfer</button>
-        </div>
-        <!-- Loading Spinner -->
-        <br>
-
-      <!-- Final Confirmation Message -->
       
-        <p>Your service {{ bookedService.service.name }} at {{ bookedService.shop.name }} has been confirmed with
-          payment via {{ paymentMethod }}.</p>
-        
-     
-      </mat-card>
+          <div class="notification">
+            <span class="notification-icon" style="background-color: #4caf50;">📅</span>
+            <div class="notification-text">
+              <strong>Appointment Confirmed:</strong> Car Wash on Jan 20, 2025.
+              <p class="notification-time">1 hour ago</p>
+            </div>
+          </div>
+      
+         
+        </div>
+      </div>
 
+      <div class="card">
+        <h3>Recommended Services</h3>
+        <div class="recommended-services-container">
+          <div class="service">
+            <span class="service-icon" style="background-color: #3498db;">🧽</span>
+            <div class="service-text">
+              <strong>Car Wash</strong>
+              <p class="service-details">Highly rated by 150+ users</p>
+            </div>
+          </div>
+      
+          <div class="service">
+            <span class="service-icon" style="background-color: #f39c12;">🔧</span>
+            <div class="service-text">
+              <strong>Oil Change</strong>
+              <p class="service-details">Preferred by 80% of customers</p>
+            </div>
+          </div>
+      
+         
+        </div>
+      </div>
+    
+      <!-- Badges Earned Card -->
+      <div class="card">
+        <h3>Badges Earned</h3>
+        <div class="badges-container">
+          <div class="badge">
+            <span class="badge-icon" style="background-color: #f39c12;">🎖</span>
+            <span class="badge-text">Service Master</span>
+            <p class="badge-subtext">Posted 50 Ads</p>
+          </div>
+          <div class="badge">
+            <span class="badge-icon" style="background-color: #3498db;">🏅</span>
+            <span class="badge-text">Loyal Customer</span>
+            <p class="badge-subtext">5 Years with Us</p>
+          </div>
+         </div>
+      </div>
+    
+      <!-- Ads Posted Card -->
+      <!-- Ads Posted Card -->
+<div class="card">
+  <h3 class="card-title">
+    <mat-icon>campaign</mat-icon> Ads Posted
+  </h3><br>
+  <p class="card-text">
+    <mat-icon>bar_chart</mat-icon> You have posted <strong class="highlight">12 ads</strong> so far.
+  </p><br>
+  <p class="card-text">
+    <mat-icon>calendar_today</mat-icon> Last Ad: <strong class="highlight">Car Wash Service</strong> (Jan 10, 2025)
+  </p><br>
+</div>
+      
     </div>
-
-
-
-    <div #section4>
-      <mat-card class="completed-card">
-        <mat-card-header>
-          <mat-card-title>
-            <pre class="textBlueColor"> Completed Services</pre>
-          </mat-card-title><br>
-        </mat-card-header>
-        <!-- <h2>
-          <pre class="textBlueColor"> Completed Services</pre>
-        </h2> -->
-
-        <div class="task-summary">
-
-          <!-- Task 1 -->
-          <div class="task-card">
-            <img src="../../../assets/images/c1.jpg" alt="Car Service" />
-            <div class="task-details">
-              <h3>Car Service</h3>
-              <p><strong>Description:</strong> High-quality car washing and polishing service.</p>
-              <p><strong>Review:</strong></p>
-               
-                <div class="star-rating">
-                  <span
-                    *ngFor="let star of stars; let i = index"
-                    [class.active]="i < rating"
-                    (click)="rate(i + 1)"
-                    (mouseover)="hover(i + 1)"
-                    (mouseleave)="hover(0)"
-                  >
-                    ★
-                  </span>
-                </div>
-                <p>Your rating: {{ rating }}</p>
-                
-                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview()">Submit Review</button>
-                <p *ngIf="message">{{ message }}</p>
-
-            
-              <p><strong>Shop Name:</strong> 'Speedy Car Wash'</p>
-              <p><strong>Date of Service:</strong> 12/10/24</p>
-            </div>
-          </div>
-
-          <!-- Task 2 -->
-          <div class="task-card">
-            <img src="../../../assets/images/c2.jpg" alt="Bike Service" />
-            <div class="task-details">
-              <h3>Bike Service</h3>
-              <p><strong>Description:</strong> Quick and efficient bike servicing with doorstep pickup.</p>
-              <p><strong>Review:</strong></p>
-                <div class="star-rating">
-                  <span
-                    *ngFor="let star of stars; let i = index"
-                    [class.active]="i < rating1"
-                    (click)="rate1(i + 1)"
-                    (mouseover)="hover1(i + 1)"
-                    (mouseleave)="hover1(0)"
-                  >
-                    ★
-                  </span>
-                </div>
-                <p>Your rating: {{ rating1 }}</p>
-                
-                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview1()">Submit Review</button>
-                <p *ngIf="message1">{{ message1 }}</p>
-
-            
-              <p><strong>Shop Name:</strong> 'Rapid Bike Care'</p>
-              <p><strong>Date of Service:</strong> 26/12/24</p>
-            </div>
-          </div>
-
-          <!-- Task 3 -->
-          <div class="task-card">
-            <img src="../../../assets/images/c3.jpg" alt="Gardening" />
-            <div class="task-details">
-              <h3>Gardening</h3>
-              <p><strong>Description:</strong> Professional gardening service for a beautiful backyard.</p>
-              <p><strong>Review:</strong></p>
-                <div class="star-rating">
-                  <span
-                    *ngFor="let star of stars; let i = index"
-                    [class.active]="i < rating2"
-                    (click)="rate2(i + 1)"
-                    (mouseover)="hover2(i + 1)"
-                    (mouseleave)="hover2(0)"
-                  >
-                    ★
-                  </span>
-                </div>
-                <p>Your rating: {{ rating2 }}</p>
-                
-                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview2()">Submit Review</button>
-                <p *ngIf="message2">{{ message2 }}</p>
-
-            
-              <p><strong>Shop Name:</strong> 'Green Thumb Landscaping'</p>
-              <p><strong>Date of Service:</strong> 5/1/25</p>
-            </div>
-          </div>
-        </div>
-
-      </mat-card>
-    </div>
-
-
-    <div #section5>
-      <mat-card class="post-card">
-
-        <mat-card-header>
-          <mat-card-title>
-            <pre class="textBlueColor"> Post Ads</pre>
-          </mat-card-title><br>
-        </mat-card-header>
-        <!-- <h2>
-          <pre class="textBlueColor"> Post an Ads</pre>
-        </h2> -->
-
-        <div class="card">
-          <h4><strong>
-              <pre>Post Ad</pre>
-            </strong></h4>
-
-          <div class="row">
-            <!-- Service Selection -->
-            <div class="col-6">
-              <label for="service">Choose a Service:</label>
-              <select [(ngModel)]="post.service" id="service">
-                <option *ngFor="let service of servicess" [value]="service">{{ service }}</option>
-              </select>
-            </div>
-            <div class="col">
-              <!-- Expiry Selection -->
-              <label for="expiry">Ad Expiry:</label>
-              <select [(ngModel)]="post.expiry" id="expiry">
-                <option *ngFor="let time of expiryOptions" [value]="time">{{ time }}</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <!-- File/Image Upload -->
-            <div class="col-6">
-              <label for="image">Upload Image/File:</label>
-              <input type="file" id="image" (change)="onFileSelect($event)" />
-            </div>
-            <!-- Address Input -->
-            <div class="col">
-              <label for="address">Address:</label>
-              <input type="text" id="address" [(ngModel)]="post.address" placeholder="Enter address" />
-            </div>
-          </div>
-          <!-- Description -->
-          <div>
-            <label for="description">Description:</label>
-            <textarea id="description" [(ngModel)]="post.description" placeholder="Enter job description"></textarea>
-          </div>
-
-
-
-          <!-- Post Ad Button -->
-          <button (click)="postAd()">Post Ad</button>
-
-          <!-- Success Message -->
-          <p *ngIf="successMessage">{{ successMessage }}</p>
-        </div>
-        <br>
-
-      </mat-card>
-    </div>
-
-
-    <div #section6>
-      <mat-card class="active-card">
-        <mat-card-header>
-          <mat-card-title>
-
-            <pre class="textBlueColor"> Active Ads</pre>
-
-          </mat-card-title><br>
-        </mat-card-header>
-        <!-- <h2>
-          <pre class="textBlueColor"> Active Ads</pre>
-        </h2> -->
-        <!-- <div class="ad-card">
-          <div class="ad-header">
-            <img src="../../../assets/images/a1.jpg" alt="Service Image" class="ad-image">
-            <div class="ad-info">
-              <h4>Ad-1</h4>
-              <p class="ad-type">Bike Wash</p>
-              <p class="ad-days-left">Expires in 15 days</p>
-            </div>
-          </div>
-          <div class="ad-description">
-            <h4>Address</h4>
-            <p>Opp Reliance super mart,Kd road, Mysore, India</p>
-          </div>
-          <div class="ad-footer">
-            <p>Thorough cleaning and maintenance for all bike types, using eco-friendly products to remove grime and
-              ensure optimal performance.</p>
-          </div><br>
-          <hr>
-
-
-
-          <div class="ad-header">
-            <img src="../../../assets/images/a3.jpg" alt="Service Image" class="ad-image">
-            <div class="ad-info">
-              <h4>Ad-3</h4>
-              <p class="ad-type">Aquarium Wash</p>
-              <p class="ad-days-left">Expires in 2 days</p>
-            </div>
-          </div>
-          <div class="ad-description">
-            <h4>Address</h4>
-            <p>Vijaynagara 4th stage, Mysore, India</p>
-          </div>
-          <div class="ad-footer">
-            <p>Expert cleaning and maintenance for your aquarium, ensuring a healthy aquatic environment with tailored
-              care for both freshwater and saltwater tanks.</p>
-          </div>
-
-        </div> -->
-        
-        <div class="ad-row">
-          <div class="ad-card1">
-            <div class="ad-header">
-              <img src="../../../assets/images/c2.jpg" alt="Bike Image" class="ad-image">
-              <div class="expired-ad-info">
-                <h2>Bike Shine</h2>
-                <p class="expired-ad-description"> <strong>Location: </strong> Opp Reliance Mart,KD Road ,Mysore</p>
-                <p class="expired-ad-status">Expires in 13 days</p>
-                <p class="expired-ad-description">Give my bike the shine it deserves! scrubs, polish it .</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="ad-card1">
-            <div class="ad-header">
-              <img src="../../../assets/images/c1.jpg" alt="Expired Aquarium Image" class="expired-ad-image">
-              <div class="expired-ad-info">
-                <h2>Car Wash</h2>
-                <p class="expired-ad-description"> <strong>Location: </strong> Gokulam 1st main,5th cross ,Mysore</p>
-                <p class="expired-ad-status">Expires in 5 hrs</p>
-                <p class="expired-ad-description">Dive into crystal-clear waters with our expert car care.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ad-row">
-          <div class="ad-card1">
-            <div class="expired-ad-header">
-              <img src="../../../assets/images/d3.jpg" alt="Expired Tank Image" class="expired-ad-image">
-              <div class="expired-ad-info">
-                <h2>Tank TLC</h2>
-                <p class="expired-ad-description"> <strong>Location: </strong> Vijaynagara 2nd stage,Near Chat street ,Mysore</p>
-                <p class="expired-ad-status">Expires in 1 hrs</p>
-                <p class="expired-ad-description"> Clean, inspect, and repair tank well in 4 hrs.</p>
-              </div>
-            </div>
-          </div>
-          <div class="ad-card1">
-            <div class="expired-ad-header">
-              <img src="../../../assets/images/c3.jpg" alt="Expired Tank Image" class="expired-ad-image">
-              <div class="expired-ad-info">
-                <h2>Gardening</h2>
-                <p class="expired-ad-description"> <strong>Location: </strong>Kuvempu Nagar 1st stage, Banglore</p>
-                <p class="expired-ad-status">Expires in  1 day</p>
-                <p class="expired-ad-description"> Clean, inspect, and make garden  well in 4 hrs.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br>
-      </mat-card>
-    </div>
-
-    <div #section7>
-      <mat-card class="ex-card">
-        <mat-card-header>
-          <mat-card-title>
-
-            <pre class="textBlueColor"> Expired Ads</pre>
-
-          </mat-card-title><br>
-        </mat-card-header>
-        <!-- <h2>
-          <pre class="textBlueColor"> Expired Ads</pre>
-        </h2> -->
-
-        <div class="ad-row">
-          <div class="ad-card1">
-            <div class="ad-header">
-              <img src="../../../assets/images/d1.jpg" alt="Bike Image" class="ad-image">
-              <div class="expired-ad-info">
-                <h2>Bike Shine</h2>
-                <p class="expired-ad-status">Expired 3 days ago</p>
-                <p class="expired-ad-description">Give my bike the shine it deserves! scrubs, polish it .</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="ad-card1">
-            <div class="ad-header">
-              <img src="../../../assets/images/d2.jpg" alt="Expired Aquarium Image" class="expired-ad-image">
-              <div class="expired-ad-info">
-                <h2>Aquarium Care</h2>
-                <p class="expired-ad-status">Expired 12 days ago</p>
-                <p class="expired-ad-description">Dive into crystal-clear waters with our expert aquarium care.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ad-row">
-          <div class="ad-card1">
-            <div class="expired-ad-header">
-              <img src="../../../assets/images/d3.jpg" alt="Expired Tank Image" class="expired-ad-image">
-              <div class="expired-ad-info">
-                <h2>Tank TLC</h2>
-                <p class="expired-ad-status">Expired 1 month ago</p>
-                <p class="expired-ad-description"> Clean, inspect, and repair tank well in 4 hrs.</p>
-              </div>
-            </div>
-          </div>
-          <div class="ad-card1">
-            <div class="expired-ad-header">
-              <img src="../../../assets/images/d3.jpg" alt="Expired Tank Image" class="expired-ad-image">
-              <div class="expired-ad-info">
-                <h2>Tank TLC</h2>
-                <p class="expired-ad-status">Expired 1 month ago</p>
-                <p class="expired-ad-description"> Clean, inspect, and repair tank well in 4 hrs.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </mat-card>
-    </div>
+    
   </div>
 </div>

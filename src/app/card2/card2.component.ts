@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-card2',
   standalone: false,
-
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  
+  templateUrl: './card2.component.html',
+  styleUrl: './card2.component.css'
 })
-export class DashboardComponent {
-  displaySideBar = true;
-  editUserForm = false;
+export class Card2Component {
 
   servicess = ['Car Service', 'Bike Service', 'Pet Grooming', 'Gardening', 'Sofa Cleaning'];
   expiryOptions = ['30 Minutes', '1 Hour', '2 Hours'];
@@ -279,17 +277,4 @@ export class DashboardComponent {
       this.successMessage = 'Please fill out all fields!';
     }
   }
-  navigateToHome() {
-    location.href = '#';
-  }
-  navigateToLogin(){
-    this.router.navigate(['/login']);  // define your component where you want to go
-  }
-  editUser() {
-    this.editUserForm = true;
-  }
-  updateUser() {
-    this.editUserForm = false;
-  }
-
 }

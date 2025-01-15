@@ -1,0 +1,29 @@
+<mat-card class="hover-card"><br>
+    <mat-card-header>
+      <mat-card-title>
+        <pre class="textBlueColor">Recent Payments</pre>
+      </mat-card-title><br>
+      <br>
+      <mat-card-subtitle class="paymentSubtitle"><mat-icon>history</mat-icon>Last 5
+        Transactions</mat-card-subtitle><br>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <div class="recent-payments">
+        <!-- Static Payments List using ngFor -->
+        <div class="payment-item" *ngFor="let payment of [
+          { image: '../../../assets/images/p1.jpg', title: 'UPI Transfer', date: 'Jan 5, 2025', amount: '500 rs' },
+          { image: '../../../assets/images/p2.jpg', title: 'PayPal Invoice', date: 'Jan 3, 2025', amount: '300 rs' },
+          { image: '../../../assets/images/p3.jpg', title:  'Bank Transfer', date: 'Jan 2, 2025', amount: '450 rs' },
+          { image: '../../../assets/images/p4.jpg', title: 'Cash Deposit', date: 'Jan 1, 2025', amount: '750 rs' }
+        ]">
+          <img class="payment-icon" [src]="payment.image" alt="{{ payment.title }}" />
+          <div class="payment-details">
+            <p><strong>{{ payment.title }}</strong></p>
+            <p>{{ payment.date }}</p>
+          </div>
+          <p class="payment-amount">{{ payment.amount }}</p>
+        </div>
+      </div><br>
+    </mat-card-content>
+  </mat-card>

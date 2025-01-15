@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-card3',
   standalone: false,
 
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  templateUrl: './card3.component.html',
+  styleUrl: './card3.component.css'
 })
-export class DashboardComponent {
+export class Card3Component {
   displaySideBar = true;
   editUserForm = false;
 

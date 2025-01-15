@@ -108,7 +108,7 @@ body {
 /* Recent Payments Styles */
 .recent-payments {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
   align-self: start;
   justify-content: space-evenly;
@@ -670,4 +670,246 @@ button {
 
 .star-rating span:hover {
   color: gold; /* Highlight hovered stars */
+}
+
+
+
+/* Container for cards */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual card styling */
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card headings */
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+/* Card lists */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Card paragraph text */
+.card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+
+/* Container for badges */
+.badges-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adds space between badges */
+  margin-top: 15px;
+}
+
+/* Badge container styling */
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Badge hover effect */
+.badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+/* Badge icon styling */
+.badge-icon {
+  font-size: 2rem; /* Size of the badge icon */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge text styling */
+.badge-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Badge subtext styling */
+.badge-subtext {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Container for notifications */
+.notifications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adds space between notifications */
+  margin-top: 15px;
+}
+
+/* Notification block styling */
+.notification {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+/* Notification hover effect */
+.notification:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+/* Notification icon styling */
+.notification-icon {
+  font-size: 2rem; /* Size of the icon */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Notification text styling */
+.notification-text {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Notification time styling */
+.notification-time {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+
+/* Container for recommended services */
+.recommended-services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between services */
+  margin-top: 15px;
+}
+
+/* Individual service styling */
+.service {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+/* Service hover effect */
+.service:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+/* Service icon styling */
+.service-icon {
+  font-size: 2rem; /* Icon size */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+/* Service icon hover animation */
+.service-icon:hover {
+  transform: rotate(15deg);
+}
+
+/* Service text styling */
+.service-text {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Service details (subtext) */
+.service-details {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+.card-title mat-icon,
+.card-text mat-icon {
+  color: #007bff;
+  margin-right: 8px;
+  vertical-align: middle;
 }

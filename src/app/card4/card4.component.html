@@ -1,0 +1,61 @@
+<mat-card class="post-card">
+
+    <mat-card-header>
+      <mat-card-title>
+        <pre class="textBlueColor"> Post Ads</pre>
+      </mat-card-title><br>
+    </mat-card-header>
+    <!-- <h2>
+      <pre class="textBlueColor"> Post an Ads</pre>
+    </h2> -->
+
+    <div class="card">
+      <h4><strong>
+          <pre>Post Ad</pre>
+        </strong></h4>
+
+      <div class="row">
+        <!-- Service Selection -->
+        <div class="col-6">
+          <label for="service">Choose a Service:</label>
+          <select [(ngModel)]="post.service" id="service">
+            <option *ngFor="let service of servicess" [value]="service">{{ service }}</option>
+          </select>
+        </div>
+        <div class="col">
+          <!-- Expiry Selection -->
+          <label for="expiry">Ad Expiry:</label>
+          <select [(ngModel)]="post.expiry" id="expiry">
+            <option *ngFor="let time of expiryOptions" [value]="time">{{ time }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <!-- File/Image Upload -->
+        <div class="col-6">
+          <label for="image">Upload Image/File:</label>
+          <input type="file" id="image" (change)="onFileSelect($event)" />
+        </div>
+        <!-- Address Input -->
+        <div class="col">
+          <label for="address">Address:</label>
+          <input type="text" id="address" [(ngModel)]="post.address" placeholder="Enter address" />
+        </div>
+      </div>
+      <!-- Description -->
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="post.description" placeholder="Enter job description"></textarea>
+      </div>
+
+
+
+      <!-- Post Ad Button -->
+      <button (click)="postAd()">Post Ad</button>
+
+      <!-- Success Message -->
+      <p *ngIf="successMessage">{{ successMessage }}</p>
+    </div>
+    <br>
+
+  </mat-card>
