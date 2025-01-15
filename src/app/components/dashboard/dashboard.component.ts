@@ -121,8 +121,12 @@ export class DashboardComponent {
   finalConfirmation: boolean = false;
   isLoading: boolean = false;
   rating: number = 0;
+  rating1: number = 0;
+  rating2: number = 0;
   stars: number[] = Array(5).fill(0);
   message: string = '';
+  message1: string = '';
+  message2: string = '';
 
   rate(value: number): void {
     this.rating = value;
@@ -132,6 +136,26 @@ export class DashboardComponent {
   hover(value: number): void {
     this.rating = value ? value - 1 : this.rating;
   }
+
+  rate1(value: number): void {
+    this.rating1 = value;
+  }
+
+  // Highlight stars on hover
+  hover1(value: number): void {
+    this.rating1 = value ? value - 1 : this.rating1;
+  }
+
+
+  rate2(value: number): void {
+    this.rating2 = value;
+  }
+
+  // Highlight stars on hover
+  hover2(value: number): void {
+    this.rating2 = value ? value - 1 : this.rating2;
+  }
+
 
   // Handle review submission
   submitReview(): void {
@@ -143,6 +167,30 @@ export class DashboardComponent {
       this.message = 'Thank you for rating us !';
     }
   }
+
+
+  submitReview1(): void {
+    if (this.rating1 === 0) {
+      this.message1 = 'Please select a rating before submitting.';
+    } else {
+      // Save the review locally
+      localStorage.setItem('userRating', this.rating1.toString());
+      this.message1 = 'Thank you for rating us !';
+    }
+  }
+
+
+  submitReview2(): void {
+    if (this.rating2 === 0) {
+      this.message2 = 'Please select a rating before submitting.';
+    } else {
+      // Save the review locally
+      localStorage.setItem('userRating', this.rating2.toString());
+      this.message2 = 'Thank you for rating us !';
+    }
+  }
+
+
 
 
   constructor(private router: Router) { 

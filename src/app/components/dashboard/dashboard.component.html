@@ -287,18 +287,18 @@
                 <div class="star-rating">
                   <span
                     *ngFor="let star of stars; let i = index"
-                    [class.active]="i < rating"
-                    (click)="rate(i + 1)"
-                    (mouseover)="hover(i + 1)"
-                    (mouseleave)="hover(0)"
+                    [class.active]="i < rating1"
+                    (click)="rate1(i + 1)"
+                    (mouseover)="hover1(i + 1)"
+                    (mouseleave)="hover1(0)"
                   >
                     ★
                   </span>
                 </div>
-                <p>Your rating: {{ rating }}</p>
+                <p>Your rating: {{ rating1 }}</p>
                 
-                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview()">Submit Review</button>
-                <p *ngIf="message">{{ message }}</p>
+                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview1()">Submit Review</button>
+                <p *ngIf="message1">{{ message1 }}</p>
 
             
               <p><strong>Shop Name:</strong> 'Rapid Bike Care'</p>
@@ -316,18 +316,18 @@
                 <div class="star-rating">
                   <span
                     *ngFor="let star of stars; let i = index"
-                    [class.active]="i < rating"
-                    (click)="rate(i + 1)"
-                    (mouseover)="hover(i + 1)"
-                    (mouseleave)="hover(0)"
+                    [class.active]="i < rating2"
+                    (click)="rate2(i + 1)"
+                    (mouseover)="hover2(i + 1)"
+                    (mouseleave)="hover2(0)"
                   >
                     ★
                   </span>
                 </div>
-                <p>Your rating: {{ rating }}</p>
+                <p>Your rating: {{ rating2 }}</p>
                 
-                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview()">Submit Review</button>
-                <p *ngIf="message">{{ message }}</p>
+                <button style="background-color: rgb(203, 221, 221); color: black;" (click)="submitReview2()">Submit Review</button>
+                <p *ngIf="message2">{{ message2 }}</p>
 
             
               <p><strong>Shop Name:</strong> 'Green Thumb Landscaping'</p>
