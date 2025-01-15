@@ -28,6 +28,7 @@ import { Card5Component } from './card5/card5.component';
 import { Card6Component } from './card6/card6.component';
 import { Card7Component } from './card7/card7.component';
 import { Card8Component } from './card8/card8.component';
+import { UregComponent } from './ureg/ureg.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { Card8Component } from './card8/card8.component';
     Card5Component,
     Card6Component,
     Card7Component,
-    Card8Component
+    Card8Component,
+    UregComponent
    
   ],
   imports: [

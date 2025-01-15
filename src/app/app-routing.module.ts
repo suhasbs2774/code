@@ -13,6 +13,7 @@ import { Card5Component } from './card5/card5.component';
 import { Card6Component } from './card6/card6.component';
 import { Card7Component } from './card7/card7.component';
 import { Card8Component } from './card8/card8.component';
+import { UregComponent } from './ureg/ureg.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'card6',component: Card6Component},
   {path: 'card7',component: Card7Component},
   {path: 'card8',component: Card8Component},
+  {path: 'ureg',component: UregComponent},
 
   {path: '',redirectTo: '/login',pathMatch: 'full'}  // Add the new route
 

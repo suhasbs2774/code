@@ -22,5 +22,8 @@ export class LoginComponent {
  gotoVendor() {
   this.router.navigate(['/vendor']);
  }
+ gotoUreg() {
+  this.router.navigate(['/ureg']);
+ }
 
 }
