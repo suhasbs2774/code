@@ -1,1 +1,115 @@
-<p>card7 works!</p>
+<div class="main-container">
+    <!-- Company Logo -->
+    <div class="logo-container">
+      <img src="../../../assets/images/waveWashlogo.jpg" alt="Company Logo" class="company-logo" />
+    </div>
+  
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><button type="submit" class="btn btn-primary" (click)="gotoLogin()">  Login</button></li>
+        <li><button type="submit" class="btn btn-primary" (click)="gotoLogin()">  Help</button></li>
+        <li><button type="submit" class="btn btn-primary" (click)="gotoLogin()">  User-Dashboard</button></li>
+        <li><button type="submit" class="btn btn-primary" (click)="gotoLogin()">  Vendor-Dashboard</button></li>
+      </ul>
+    </nav>
+  
+    <!-- Main Content -->
+    <div class="content">
+
+  
+    <h1>Nearby Washing Services</h1>
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="location"
+        placeholder="Enter your location..."
+      />
+      <button (click)="fetchServices()">Search</button>
+      <button (click)="clearSearch()">Clear</button>
+    </div>
+  
+    <div *ngIf="services.length === 0 && location" class="no-results">
+      <p>No services found in "{{ location }}".</p>
+    </div>
+  
+    <div class="service-list" *ngIf="services.length > 0">
+      <h2>Available Services:</h2>
+      <div *ngFor="let service of services" class="service-card" (click)="viewDetails(service)">
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.address }}</p>
+      </div>
+    </div>
+  
+    <!-- Detailed View Section -->
+    <div *ngIf="selectedService" class="service-details">
+      <h2>Service Details</h2>
+      <h3>{{ selectedService.name }}</h3>
+      <p><strong>Description:</strong> {{ selectedService.description }}</p>
+      <p><strong>Address:</strong> {{ selectedService.address }}</p>
+      <button (click)="openBookingForm()">Book</button>
+      &nbsp;
+      &nbsp;
+      <button (click)="closeDetails()">Close</button>
+    </div>
+  
+    <!-- Booking Form -->
+    <div *ngIf="showBookingForm" class="booking-form">
+      <h2>Booking Form</h2>
+      <form (ngSubmit)="submitBooking()">
+        <div class="form-group">
+          <label for="userAddress">Address</label>
+          <input
+            type="text"
+            id="userAddress"
+            [(ngModel)]="bookingData.address"
+            name="address"
+            placeholder="Enter your address"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="userDescription">Description</label>
+          <textarea
+            id="userDescription"
+            [(ngModel)]="bookingData.description"
+            name="description"
+            placeholder="Enter a description"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="userImage">Upload Image</label>
+          <input
+            type="file"
+            id="userImage"
+            (change)="handleImageUpload($event)"
+            accept="image/*"
+          />
+        </div>
+        <button type="submit">Submit Booking</button>
+        <button type="button" (click)="closeBookingForm()">Cancel</button>
+      </form>
+    </div>
+  
+    <!-- Confirmation Message -->
+    <div *ngIf="bookingSubmitted" class="confirmation-message">
+      <h2>Booking Confirmed!</h2>
+      <p><strong>Service:</strong> {{ selectedService.name }}</p>
+      <p><strong>Address:</strong> {{ bookingData.address }}</p>
+      <p><strong>Description:</strong> {{ bookingData.description }}</p>
+      <p><strong>Image:</strong> {{ bookingData.image?.name }}</p>
+      <button (click)="closeConfirmation()">Close</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 Company Name. All rights reserved.</p>
+  <div class="social-icons">
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+</div>

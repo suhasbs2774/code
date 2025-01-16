@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PristineChangeEvent } from '@angular/forms';
 import { Router } from '@angular/router'
 
 @Component({
@@ -9,6 +10,9 @@ import { Router } from '@angular/router'
   styleUrl: './card2.component.css'
 })
 export class Card2Component {
+
+
+  
 
   servicess = ['Car Service', 'Bike Service', 'Pet Grooming', 'Gardening', 'Sofa Cleaning'];
   expiryOptions = ['30 Minutes', '1 Hour', '2 Hours'];
@@ -115,7 +119,7 @@ export class Card2Component {
   ];
   selectedService: any = null;
   bookedService: any = null;
-  paymentMethod: string = '';
+  paymentMethod: string | null = null;
   finalConfirmation: boolean = false;
   isLoading: boolean = false;
   rating: number = 0;
@@ -125,6 +129,8 @@ export class Card2Component {
   message: string = '';
   message1: string = '';
   message2: string = '';
+  
+  
 
   rate(value: number): void {
     this.rating = value;
@@ -222,10 +228,14 @@ export class Card2Component {
       this.router.navigate(['/card8']);
      }
 
+   
+     
+    
+   
+     // Method to calculate GST and total prices
+     
 
-
-
-
+     
 
 
 

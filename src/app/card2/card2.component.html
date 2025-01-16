@@ -36,6 +36,8 @@
   <!-- Confirmation Message -->
   <mat-card *ngIf="bookedService" class="confirmation-card">
     <h3>Booked Service</h3>
+
+   
     <p>You have booked {{ bookedService.shop.name }} for {{ bookedService.service.name }} at {{
       bookedService.shop.price }} on selected date.</p>
 

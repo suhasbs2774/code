@@ -44,7 +44,7 @@ import { UregComponent } from './ureg/ureg.component';
     Card4Component,
     Card5Component,
     Card6Component,
-    Card7Component,
+  
     Card8Component,
     UregComponent
    
@@ -66,6 +66,7 @@ import { UregComponent } from './ureg/ureg.component';
     MatIconModule,
     MatToolbarModule,
     MatGridListModule,
+    Card7Component,
 
   ],
   providers: [

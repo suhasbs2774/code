@@ -913,3 +913,60 @@ button {
   margin-right: 8px;
   vertical-align: middle;
 }
+
+
+
+
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16px;
+  }
+
+  .offer-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    text-align: left;
+
+    .icon {
+      font-size: 36px; /* Large emoji size */
+      margin-right: 12px;
+    }
+
+    .birthday-icon {
+      color: #ff5733; /* Bright orange for the birthday emoji */
+    }
+
+    .car-icon {
+      color: #4285f4; /* Blue for the car emoji */
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 16px;
+      color: #444;
+    }
+
+    p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #666;
+    }
+  }
+
+  .offer-btn {
+    background: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: #e67e22;
+    }
+  }
