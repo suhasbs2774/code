@@ -9,6 +9,7 @@
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    width: 80%;
   }
   
   .search-bar input {
@@ -35,6 +36,10 @@
   
   .service-list {
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+    padding: 20px;
   }
   
   .service-card {
@@ -233,13 +238,40 @@ body {
     text-align: center;
     margin: 40px 0;
     padding: 20px;
-    max-width: 800px;
+    width: 900px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+  .content1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+  }
+  
+
+  .mc {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+    padding: 20px;
+  }
   
   .content h1 {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+
+  h1 {
     font-size: 36px;
     color: #007bff;
     margin-bottom: 20px;
