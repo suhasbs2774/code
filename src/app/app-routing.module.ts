@@ -14,6 +14,7 @@ import { Card6Component } from './card6/card6.component';
 import { Card7Component } from './card7/card7.component';
 import { Card8Component } from './card8/card8.component';
 import { UregComponent } from './ureg/ureg.component';
+import { CbotComponent } from './cbot/cbot.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'card7',component: Card7Component},
   {path: 'card8',component: Card8Component},
   {path: 'ureg',component: UregComponent},
+  {path: 'cbot',component: CbotComponent},
 
   {path: '',redirectTo: '/login',pathMatch: 'full'}  // Add the new route
 

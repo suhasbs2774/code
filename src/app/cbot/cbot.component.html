@@ -1,0 +1,39 @@
+<div class="chatbot-container">
+    <!-- Header -->
+    <div class="chat-header">
+      Virtual Assistant
+    </div>
+  
+    <!-- Chat Body -->
+    <div class="chat-body">
+      <!-- Loop through messages -->
+      <div
+        *ngFor="let message of messages"
+        [class.user-message]="message.isUser"
+        [class.bot-message]="!message.isUser"
+        class="message"
+      >
+        <!-- Avatar -->
+        <img
+          [src]="message.isUser ? '../../../assets/images/dp2.jpg' : '../../../assets/images/dp3.jpg'"
+          [alt]="message.isUser ? 'User' : 'Bot'"
+        />
+        <!-- Message Text -->
+        <div class="message-text">
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <div class="chat-footer">
+      <input
+        [(ngModel)]="userInput"
+        (keyup.enter)="sendMessage()"
+        placeholder="Type your message..."
+        type="text"
+      />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+  

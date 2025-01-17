@@ -116,4 +116,8 @@ export class Card7Component {
        gotoDashboard() {
         this.router.navigate(['/dashboard']);  // define your component where you want to go
        }
+
+       gotoCbot() {
+        this.router.navigate(['/cbot']);  // define your component where you want to go
+       }
 }

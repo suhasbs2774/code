@@ -29,7 +29,7 @@ import { Card6Component } from './card6/card6.component';
 import { Card7Component } from './card7/card7.component';
 import { Card8Component } from './card8/card8.component';
 import { UregComponent } from './ureg/ureg.component';
-
+import { CbotComponent } from './cbot/cbot.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,15 +44,13 @@ import { UregComponent } from './ureg/ureg.component';
     Card4Component,
     Card5Component,
     Card6Component,
-  
+
     Card8Component,
     UregComponent
-   
   ],
   imports: [
     BrowserModule,
     FormsModule,
-  
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
@@ -67,7 +65,7 @@ import { UregComponent } from './ureg/ureg.component';
     MatToolbarModule,
     MatGridListModule,
     Card7Component,
-
+    CbotComponent
   ],
   providers: [
     
