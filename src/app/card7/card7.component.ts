@@ -120,4 +120,8 @@ export class Card7Component {
        gotoCbot() {
         this.router.navigate(['/cbot']);  // define your component where you want to go
        }
+
+       gotoHelpp() {
+        this.router.navigate(['/helpp']);  // define your component where you want to go
+       }
 }

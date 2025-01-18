@@ -1,0 +1,137 @@
+/* General Container */
+.help-container {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 960px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Welcome Banner */
+  .welcome-banner {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .banner-icon {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color:  #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Section Titles */
+  .section-title {
+    font-size: 1.8rem;
+    color: #333;
+    border-bottom: 3px solid  #007bff;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Key Features */
+  .key-features {
+    margin-bottom: 2rem;
+  }
+  
+  .features-list {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  
+  .feature-item {
+    flex: 1;
+    padding: 1.5rem;
+    background: #e3f2fd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .feature-item h3 {
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-item p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    margin-bottom: 2rem;
+  }
+  
+  .faq-item {
+    margin-bottom: 1rem;
+    background: #f1f3f4;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    background: #e9ecef;
+  }
+  
+  .faq-item h4 {
+    font-size: 1.2rem;
+    color:  #007bff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-item p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    text-align: center;
+  }
+  
+  .contact-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .contact-info a {
+    color:  #007bff;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .features-list {
+      flex-direction: column;
+    }
+  
+    .feature-item {
+      margin-bottom: 1rem;
+    }
+  }

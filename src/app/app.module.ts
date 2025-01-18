@@ -30,6 +30,7 @@ import { Card7Component } from './card7/card7.component';
 import { Card8Component } from './card8/card8.component';
 import { UregComponent } from './ureg/ureg.component';
 import { CbotComponent } from './cbot/cbot.component';
+import { HelppComponent } from './helpp/helpp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,8 @@ import { CbotComponent } from './cbot/cbot.component';
     MatToolbarModule,
     MatGridListModule,
     Card7Component,
-    CbotComponent
+    CbotComponent,
+    HelppComponent
   ],
   providers: [
     
