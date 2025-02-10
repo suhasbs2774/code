@@ -16,6 +16,7 @@ import { Card8Component } from './card8/card8.component';
 import { UregComponent } from './ureg/ureg.component';
 import { CbotComponent } from './cbot/cbot.component';
 import { HelppComponent } from './helpp/helpp.component';
+import { JobListingsComponent } from './job-listings/job-listings.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'card8',component: Card8Component},
   {path: 'ureg',component: UregComponent},
   {path: 'cbot',component: CbotComponent},
+  {path: 'job-listings',component: JobListingsComponent},
   {path: 'helpp',component: HelppComponent},
 
   {path: '',redirectTo: '/login',pathMatch: 'full'}  // Add the new route

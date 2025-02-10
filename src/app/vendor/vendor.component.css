@@ -1,0 +1,129 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Container - Centered and Well-Spaced */
+  .container {
+    max-width: 800px;
+    margin: 40px auto; /* Adds space around */
+    padding: 25px;
+    background: #eef5ff; /* Soft Blue Background */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Heading Styling - Well-Aligned */
+  h2 {
+    text-align: center;
+    color: #003366; /* Deep Blue */
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    color: #0056b3;
+    font-size: 20px;
+    font-weight: 600;
+    border-left: 5px solid #007bff;
+    padding-left: 12px;
+    margin-bottom: 15px;
+  }
+  
+  /* List Styling - Properly Spaced */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    background: #d6e4ff; /* Light Blue */
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  ul li:hover {
+    background: #b3ccff; /* Slightly Darker Blue */
+  }
+  
+  /* Input Field - Standardized */
+  input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #0056b3;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f0f7ff; /* Light Blue */
+    transition: border-color 0.3s ease-in-out;
+    display: block;
+    margin: 10px 0;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #004080;
+    outline: none;
+  }
+  
+  /* Button Styling - Professional Look */
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003366);
+    transform: scale(1.05);
+  }
+  
+  /* Amount Styling - Properly Aligned */
+  .amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #004080;
+    background: #cce0ff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      max-width: 90%;
+      padding: 20px;
+    }
+  
+    ul li {
+      flex-direction: column;
+      text-align: center;
+    }
+  }

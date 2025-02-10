@@ -1,1 +1,52 @@
-<p>vendor works!</p>
+<div class="container">
+    <h2>Vendor Dashboard</h2>
+  
+    <div class="profile-status">
+      <label>
+        <input type="radio" name="status" checked> Online
+      </label>
+      <label>
+        <input type="radio" name="status"> Offline
+      </label>
+    </div>
+  
+    <section class="services">
+      <h3>Services Offered</h3>
+      <ul>
+        <li>
+          <h4>Car Wash</h4>
+          <ul>
+            <li>Hatchback - Price: <input type="text" placeholder="Enter price"></li>
+            <li>Sedan - Price: <input type="text" placeholder="Enter price"></li>
+            <li>SUV - Price: <input type="text" placeholder="Enter price"></li>
+          </ul>
+        </li>
+        <li>Bike Wash - Price: <input type="text" placeholder="Enter price"></li>
+        <li>Tank & Sump Wash - Price: <input type="text" placeholder="Enter price"></li>
+        <li>Aquarium Wash - Price: <input type="text" placeholder="Enter price"></li>
+        <li>Pet Wash - Price: <input type="text" placeholder="Enter price"></li>
+      </ul>
+    </section>
+  
+    <section class="bidding">
+        <br>
+      <h3>Bid for Jobs</h3>
+      <button type="submit" class="btn" (click)="gotoJobListings()">  view job listings</button><br>
+    </section>
+  
+    <section class="history"><br>
+      <h3>Service History</h3>
+      <p>View all completed washes with ratings & reviews.</p><br>
+    </section>
+  
+    <section class="bookings"><br>
+      <h3>Today's Bookings</h3><br>
+      <button class="btn">Manage Bookings</button><br>
+    </section>
+  
+    <section class="earnings"><br>
+      <h3>Earnings</h3>
+      <p>Total Earned: <span class="amount">$0.00</span></p><br>
+      <button class="btn">Request Payment</button><br>
+    </section>
+  </div>
