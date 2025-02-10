@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Available Jobs</h2>
+  
+    <div *ngFor="let job of jobListings" class="job-card">
+      <img [src]="job.image" alt="Job Image" class="job-image">
+      <div class="job-details">
+        <h3>{{ job.serviceType }}</h3>
+        <p><strong>Address:</strong> {{ job.address }}</p>
+        <p><strong>Details:</strong> {{ job.description }}</p>
+        <input type="number" [(ngModel)]="job.bidAmount" placeholder="Enter your bid">
+        <button class="btn" (click)="placeBid(job)">Place Bid</button>
+      </div>
+    </div>
+  </div>

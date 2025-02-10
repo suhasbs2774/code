@@ -1,0 +1,64 @@
+.bookings-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    color: #007bff;
+    text-align: center;
+  }
+  
+  .booking-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .booking-details {
+    flex: 1;
+    text-align: left;
+  }
+  
+  span.accepted {
+    color: green;
+    font-weight: bold;
+  }
+  
+  span.rejected {
+    color: red;
+    font-weight: bold;
+  }
+  
+  button {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .accept-btn {
+    background: #28a745;
+    color: white;
+  }
+  
+  .reject-btn {
+    background: #dc3545;
+    color: white;
+  }
+  
+  button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }

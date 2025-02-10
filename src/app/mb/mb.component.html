@@ -1,0 +1,17 @@
+<div class="bookings-container">
+    <h2>Bookings</h2>
+  
+    <div *ngFor="let booking of bookings" class="booking-card">
+      <div class="booking-details">
+        <h3>{{ booking.serviceType }}</h3>
+        <p><strong>Customer:</strong> {{ booking.customerName }}</p>
+        <p><strong>Address:</strong> {{ booking.address }}</p>
+        <p><strong>Date:</strong> {{ booking.date }}</p>
+        <p><strong>Time:</strong> {{ booking.time }}</p>
+        <p><strong>Status:</strong> <span [class]="booking.status.toLowerCase()">{{ booking.status }}</span></p>
+        
+        <button class="accept-btn" (click)="acceptBooking(booking)" [disabled]="booking.status !== 'Pending'">Accept</button>
+        <button class="reject-btn" (click)="rejectBooking(booking)" [disabled]="booking.status !== 'Pending'">Reject</button>
+      </div>
+    </div>
+  </div>

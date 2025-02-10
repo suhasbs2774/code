@@ -1,0 +1,64 @@
+.earnings-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .earnings-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    width: 30%;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+  }
+  
+  .total { background: #007bff; }
+  .pending { background: #ffc107; }
+  .completed { background: #28a745; }
+  
+  .request-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .request-btn:hover {
+    background: #0056b3;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background: #007bff;
+    color: white;
+  }
+  
+  .pending-status {
+    color: #ffc107;
+  }
+  
+  .completed-status {
+    color: #28a745;
+  }

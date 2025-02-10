@@ -21,4 +21,13 @@ export class VendorComponent {
          gotoJobListings() {
           this.router.navigate(['/job-listings']);  // define your component where you want to go
          }
+         gotomb() {
+          this.router.navigate(['/mb']);  // define your component where you want to go
+         }
+         gotosd() {
+          this.router.navigate(['/sd']);  // define your component where you want to go
+         }
+         gotoearn() {
+          this.router.navigate(['/earn']);  // define your component where you want to go
+         }
 }

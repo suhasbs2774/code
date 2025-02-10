@@ -17,6 +17,9 @@ import { UregComponent } from './ureg/ureg.component';
 import { CbotComponent } from './cbot/cbot.component';
 import { HelppComponent } from './helpp/helpp.component';
 import { JobListingsComponent } from './job-listings/job-listings.component';
+import { MbComponent } from './mb/mb.component';
+import { SdComponent } from './sd/sd.component';
+import { EarnComponent } from './earn/earn.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
@@ -36,7 +39,9 @@ const routes: Routes = [
   {path: 'cbot',component: CbotComponent},
   {path: 'job-listings',component: JobListingsComponent},
   {path: 'helpp',component: HelppComponent},
-
+  {path: 'mb',component: MbComponent},
+  {path: 'sd',component: SdComponent},
+  {path: 'earn',component: EarnComponent},
   {path: '',redirectTo: '/login',pathMatch: 'full'}  // Add the new route
 
 ];

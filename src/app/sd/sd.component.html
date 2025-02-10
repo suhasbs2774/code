@@ -1,0 +1,17 @@
+<div class="history-container">
+    <h2>Service History</h2>
+  
+    <div *ngFor="let service of serviceHistory" class="history-card">
+      <div class="service-details">
+        <h3>{{ service.serviceType }}</h3>
+        <p><strong>Customer:</strong> {{ service.customerName }}</p>
+        <p><strong>Date:</strong> {{ service.date }}</p>
+        <p><strong>Review:</strong> "{{ service.review }}"</p>
+        <p><strong>Rating:</strong> 
+          <span class="rating-stars">
+            <span *ngFor="let star of [].constructor(Math.floor(service.rating))">⭐</span>
+          </span> ({{ service.rating }}/5)
+        </p>
+      </div>
+    </div>
+  </div>

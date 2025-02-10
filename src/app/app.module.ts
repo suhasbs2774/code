@@ -32,6 +32,9 @@ import { UregComponent } from './ureg/ureg.component';
 import { CbotComponent } from './cbot/cbot.component';
 import { HelppComponent } from './helpp/helpp.component';
 import { JobListingsComponent } from './job-listings/job-listings.component';
+import { MbComponent } from './mb/mb.component';
+import { SdComponent } from './sd/sd.component';
+import { EarnComponent } from './earn/earn.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,14 +49,20 @@ import { JobListingsComponent } from './job-listings/job-listings.component';
     Card4Component,
     Card5Component,
     Card6Component,
-    JobListingsComponent,
+
     Card8Component,
-    UregComponent
+    UregComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     VendorComponent,
+    EarnComponent,
     FormsModule,
+    MbComponent,
+    SdComponent,
+    JobListingsComponent,
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
@@ -69,6 +78,7 @@ import { JobListingsComponent } from './job-listings/job-listings.component';
     MatGridListModule,
     Card7Component,
     CbotComponent,
+    
 
     HelppComponent
   ],

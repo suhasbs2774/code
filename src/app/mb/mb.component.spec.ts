@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { MbComponent } from './mb.component';
+
+describe('MbComponent', () => {
+  let component: MbComponent;
+  let fixture: ComponentFixture<MbComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [MbComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(MbComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

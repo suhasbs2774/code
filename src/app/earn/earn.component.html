@@ -1,0 +1,44 @@
+<div class="earnings-container">
+    <h2>Earnings Dashboard</h2>
+  
+    <div class="earnings-cards">
+      <div class="card total">
+        <h3>Total Earnings</h3>
+        <p>₹{{ totalEarnings }}</p>
+      </div>
+  
+      <div class="card pending">
+        <h3>Pending Payments</h3>
+        <p>₹{{ pendingPayments }}</p>
+      </div>
+  
+      <div class="card completed">
+        <h3>Completed Services</h3>
+        <p>{{ completedServices }} Services</p>
+      </div>
+    </div>
+  
+    <button class="request-btn" (click)="requestPayment()">Request Payment</button>
+  
+    <h3>Transaction History</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Service</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.date }}</td>
+          <td>{{ transaction.service }}</td>
+          <td>₹{{ transaction.amount }}</td>
+          <td [ngClass]="transaction.status === 'Pending' ? 'pending-status' : 'completed-status'">
+            {{ transaction.status }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
