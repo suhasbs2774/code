@@ -15,7 +15,7 @@ export class JobListingsComponent {
       serviceType: 'Car Wash - Sedan',
       address: '123 Street, City, State',
       description: 'Customer needs a full sedan wash including waxing.',
-      image: 'https://via.placeholder.com/120',
+      image: '../../../assets/images/c1.jpg',
       bidAmount: null
     },
     {
@@ -23,7 +23,7 @@ export class JobListingsComponent {
       serviceType: 'Pet Wash',
       address: '456 Avenue, City, State',
       description: 'Wash and groom a Golden Retriever.',
-      image: 'https://via.placeholder.com/120',
+      image: '../../../assets/images/c2.jpg',
       bidAmount: null
     },
     {
@@ -31,7 +31,7 @@ export class JobListingsComponent {
       serviceType: 'Aquarium Cleaning',
       address: '789 Boulevard, City, State',
       description: 'Cleaning a 50-gallon fish tank.',
-      image: 'https://via.placeholder.com/120',
+      image: '../../../assets/images/d2.jpg',
       bidAmount: null
     }
   ];

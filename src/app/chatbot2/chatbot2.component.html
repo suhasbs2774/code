@@ -1,0 +1,75 @@
+
+<mat-card class="hover-card">
+    <br>
+      <mat-card-header>
+        <mat-card-title>
+          <pre class="textBlueColor">Vendor Profile    <mat-icon class="editProfile" (click)="editUser()" color="primary">edit</mat-icon></pre>
+        
+          
+        </mat-card-title>
+        <br>
+      </mat-card-header>
+      <mat-card-content>
+        
+        <div class="user-profile">
+          <br>
+          <img class="user-image" src="../../../assets/images/vp.jpg" alt="User Image" width="35%" />
+          <br>
+          <div class="user-details" *ngIf="!editUserForm">
+            <p><strong>Compony-name: </strong> {{user.name}}</p>
+            <p><strong>Website:</strong> {{user.web}}</p>
+            <p><strong>Service Description:</strong> {{user.ser}}</p>
+            <p><strong>Email:</strong> {{user.email}}</p>
+            <p><strong>Location:</strong>{{user.address}}</p>
+            <p><strong>Pin-code:</strong> {{user.pin}}</p>
+            <p><strong>Conact no:</strong>{{user.phone}}</p>
+          </div>
+          <div *ngIf="editUserForm" class="user-details" >
+          <form>
+            <div class="row">
+              <div class="col-5">
+                <label for="name">Shop Name</label>
+                <input [(ngModel)]="user.name" type="text" [ngModelOptions]="{standalone: true}" id="name">
+              </div>
+              <div class="col-5">
+                <label for="web">Website</label>
+                <input type="text" [(ngModel)]="user.web"  [ngModelOptions]="{standalone: true}" id="web">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <label for="ser">Service Description</label>
+                <input id="ser" [(ngModel)]="user.ser"  [ngModelOptions]="{standalone: true}" type="text">
+              </div>
+              <div class="col-5">
+                <label for="pin">Pin-Code</label>
+                <input id="pin" [(ngModel)]="user.pin"  [ngModelOptions]="{standalone: true}" type="text">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-10">
+                <label for="location">location</label>
+                <textarea id="location" [(ngModel)]="user.address"  [ngModelOptions]="{standalone: true}"></textarea>
+              </div>
+              
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <label for="email">Email Address</label>
+                <input id="email" [(ngModel)]="user.email"  [ngModelOptions]="{standalone: true}" type="email">
+              </div>
+              <div class="col-5">
+                <label for="phone">Contact Number</label>
+                <input id="phone" [(ngModel)]="user.phone"  [ngModelOptions]="{standalone: true}" type="tel">
+              </div>
+            </div>
+            <div style="width:100%">
+              <button style="margin:auto; width:fit-content;" type="submit" (click)="updateUser()">Update</button>
+            </div>
+          </form>
+          </div>
+        </div>
+        <br>
+      </mat-card-content>
+    </mat-card>
+  

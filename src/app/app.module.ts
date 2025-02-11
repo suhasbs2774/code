@@ -35,6 +35,7 @@ import { JobListingsComponent } from './job-listings/job-listings.component';
 import { MbComponent } from './mb/mb.component';
 import { SdComponent } from './sd/sd.component';
 import { EarnComponent } from './earn/earn.component';
+import { Chatbot2Component } from './chatbot2/chatbot2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { EarnComponent } from './earn/earn.component';
 
     Card8Component,
     UregComponent,
+    Chatbot2Component,
     
     
   ],

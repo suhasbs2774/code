@@ -20,6 +20,7 @@ import { JobListingsComponent } from './job-listings/job-listings.component';
 import { MbComponent } from './mb/mb.component';
 import { SdComponent } from './sd/sd.component';
 import { EarnComponent } from './earn/earn.component';
+import { Chatbot2Component } from './chatbot2/chatbot2.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path: 'mb',component: MbComponent},
   {path: 'sd',component: SdComponent},
   {path: 'earn',component: EarnComponent},
+  {path: 'chatbot2',component: Chatbot2Component},
   {path: '',redirectTo: '/login',pathMatch: 'full'}  // Add the new route
 
 ];
